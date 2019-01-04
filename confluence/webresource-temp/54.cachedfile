@@ -1,0 +1,387 @@
+/* module-key = 'confluence.extra.jira:common', location = 'util/common.css' */
+div.bmDiv{color:#000;font-size:14px;font-weight:bold;margin:auto auto;position:relative;text-align:center;vertical-align:middle;height:10em;width:30em;clear:left;background-color:#f7f7f7;border:1px solid #ccc}.jira-issue,.unknown-jira-issue{background:#ebecf0;padding:1px 3px;border-radius:2px;display:inline-block;line-height:19px;white-space:normal}.jira-issue .aui-lozenge{margin-left:2px;vertical-align:text-top}.jira-issue>a,.single-issue-oauth.unknown-jira-issue>a,.lock-jira-issue>a{background-repeat:no-repeat;background-position:0 center;line-height:16px;font-size:14px}.jira-issue a img{margin-right:5px}#main .wiki-content .jira-issue.resolved>a{text-decoration:line-through}#main .wiki-content .jira-issue.resolved>a:hover{text-decoration:underline}.single-issue-oauth.unknown-jira-issue>a,.lock-jira-issue>a{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJ1BMVEX///9wcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHAzTstiAAAADHRSTlMAETNEZneImarM3e5Iqh64AAAAMklEQVQIW2NgQADG6hMKYAbn1ugFYIZNAtthCMOAGQeDZc2ZM6ccgAyeM0BwgFQGOgAAmkcjUyRCfYAAAAAASUVORK5CYII=) no-repeat;padding-left:18px}.jira-status{color:#707070;font-size:12px;font-weight:bold}.refresh-issues-bottom{display:inline-block;padding:7px 10px}#main.chart-preview-main{padding:20px 10px}.jira-tablesorter-header{background:#f0f0f0 none no-repeat scroll right center}.jira-tablesorter-header:hover,.jira-tablesorter-header:hover .jim-table-header-content{cursor:pointer;color:#333;background-color:#f5f5f5}.jira-tablesorter-header .jim-table-header-content{padding-right:15px}.jira-tablesorter-header:hover .jim-table-header-content{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKBAMAAACQ3rmwAAAAA3NCSVQICAjb4U/gAAAAD1BMVEX///9QYXNQYXNQYXNQYXNa92HSAAAABXRSTlMAESIzRJTdRHwAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAedEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzUuMasfSOsAAAB5dEVYdG5hbWVTZXRzAHsgZGVzY3JpcHRpb246IkRvd25sb2FkIHRoZSBcIk5hbWVkIFNlbGVjdGlvbiBTZXRzXCIgcGFuZWwgZnJvbSBodHRwOi8vZmlyZXdvcmtzLmFiZWFsbC5jb20iLCBpZDotMSwgc2V0czp7ICB9IH1YpK+bAAAAFXRFWHRDcmVhdGlvbiBUaW1lADI5LzMvMTJcby01AAAAJUlEQVQImWNgUGIAAUYXARDF4uIIokxcnBkwAFRQxMUBSQNEOwB/EQOGsCyAPwAAAABJRU5ErkJggg==") no-repeat right center}.jira-tablesorter-header.tablesorter-headerDesc .jim-table-header-content{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKBAMAAACQ3rmwAAAAA3NCSVQICAjb4U/gAAAAHlBMVEX///9QYXNQYXNQYXNQYXNQYXNQYXNQYXNQYXNQYXOMgbQDAAAACnRSTlMAESIzRGZ3maq7ZAl7FAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAAHl0RVh0bmFtZVNldHMAeyBkZXNjcmlwdGlvbjoiRG93bmxvYWQgdGhlIFwiTmFtZWQgU2VsZWN0aW9uIFNldHNcIiBwYW5lbCBmcm9tIGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSIsIGlkOi0xLCBzZXRzOnsgIH0gfVikr5sAAAAVdEVYdENyZWF0aW9uIFRpbWUAMjkvMy8xMlxvLTUAAAAdSURBVAiZY2AgGlTOnA6iNGY2giiWmQZg0VQQAQBOSAQedpgI7AAAAABJRU5ErkJggg==") no-repeat right center}.jira-tablesorter-header.tablesorter-headerAsc .jim-table-header-content{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKBAMAAACQ3rmwAAAAA3NCSVQICAjb4U/gAAAAHlBMVEX///9QYXNQYXNQYXNQYXNQYXNQYXNQYXNQYXNQYXOMgbQDAAAACnRSTlMAESIzRGZ3maq7ZAl7FAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAAHl0RVh0bmFtZVNldHMAeyBkZXNjcmlwdGlvbjoiRG93bmxvYWQgdGhlIFwiTmFtZWQgU2VsZWN0aW9uIFNldHNcIiBwYW5lbCBmcm9tIGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSIsIGlkOi0xLCBzZXRzOnsgIH0gfVikr5sAAAAVdEVYdENyZWF0aW9uIFRpbWUAMjkvMy8xMlxvLTUAAAAdSURBVAiZY2AIYwAB5pkOIEpiZhOIqpw5nYEUAADZjgQPuazuBAAAAABJRU5ErkJggg==") no-repeat right center}.refresh-module-id{position:relative}.refresh-issues-bottom{margin-top:5px}.refresh-issues-bottom .button-spinner{display:inline-block;width:16px;height:16px;vertical-align:top}.refresh-action-group{margin-left:7px}.jim-sortable-dark-layout{position:absolute;background-color:#f5f5f5;opacity:.5;left:0;right:0;top:0;bottom:0;width:100%;height:100%;z-index:100}.jira-padding-left-10px{padding-left:10px}.jira-left-panel-link:hover{cursor:pointer}.jim-inline-block{display:inline-block}.jim-error-message p{margin:0;padding:0}.jim-error-message-single{display:inline-block;margin:0;padding:2px 4px 2px 23px;vertical-align:middle;line-height:18px}.jim-error-message-single .icon-in-pdf{display:none}.jim-error-message-single.aui-message:before{width:23px}.jim-error-message-single.aui-message:after{left:0;margin-top:-19px;font-size:18px}.jim-error-message-single p{display:inline-block}.jim-error-message.warning .icon-warning{left:5px;top:1px}.jim-error-message-table{margin-bottom:15px;overflow:auto}.jim-error-message-table th{text-transform:capitalize}.jim-error-message-table.warning .icon-warning{top:30%}span.aui-lozenge-subtle.aui-lozenge-default.issue-placeholder{background-color:#f5f5f5;color:#707070;margin:1px 1px;padding:3px 10px 2px;font-size:10px}span.aui-icon-wait.issue-placeholder{padding-right:3px}
+/* module-key = 'confluence.extra.jira:jirachart-resources', location = '/jirachart/jirachart.css' */
+#jira-chart .jira-chart-search{padding:10px 10px 0 10px}#jira-chart .jira-chart-search .search-help{font-size:10px}#jira-chart-content-createdvsresolved,#jira-chart-content-pie,#jira-chart-content-twodimensional{position:relative;z-index:40;height:470px;overflow:hidden;margin-top:10px}#jira-chart .jira-chart-img{margin:10px;padding:0;overflow:hidden}#chart-preview-iframe{border:0;height:375px;width:100%;margin-top:-20px}.aui-message-container{text-align:left}.jira-chart-macro-wrapper .info,.created-vs-resolved-info,.jira-chart-macro-preview-container{text-align:center}.jira-chart-macro-img,.jira-chart-macro-img-created-vs-resolved{display:block;margin-left:auto;margin-right:auto}.jira-chart-macro-wrapper,.jira-chart-macro-wrapper-created-vs-resolved{padding:10px 0;display:inline-block}.jira-chart-macro-wrapper .info a{text-decoration:none}#jira-chart-macro-preview-contaier .aui-message{margin-top:-20px;margin-left:-19px;margin-right:-19px}#jira-chart .jira-chart-search-input.one-server{display:inline-block;width:535px}#jira-chart .jira-chart-option{background:none repeat scroll 0 0 #fff;border-top:1px solid #ccc;position:absolute;width:100%;z-index:50}#jira-chart a.jirachart-display-opts-open,#jira-chart a.jirachart-display-opts-close{font-size:14px;line-height:27px}#jira-chart a.jirachart-display-opts-open.disabled{opacity:.5;text-decoration:none;cursor:help;color:#838383}#jira-chart .dialog-panel-body{padding:0!important}#jira-chart .jira-chart-img .jira-chart-macro-img{text-align:center;padding-top:2px;height:375px;overflow:auto}#jira-chart .jira-chart-img .aui-message-container{margin:0 10px}.jira-chart-search-input{display:inline-block;width:380px}#jira-chart-servers.select{margin:0 8px 1px;padding-top:5px;max-width:125px}#jira-chart .jirachart-border{border:1px solid #ccc}#jira-chart .display-option-icon{width:15px;height:15px;display:inline-block;vertical-align:middle;margin:0 5px 3px 0}#jira-chart .jirachart-display-opts-close .display-option-icon{background:url(/s/ru_RU/7901/58be3fa11e9ad58113c0ea45e7063389a7c7d344/10.0.6/_/download/resources/confluence.extra.jira:jirachart-resources/icon-expand-view-down.png) no-repeat}#jira-chart .jirachart-display-opts-open .display-option-icon{background:url(/s/ru_RU/7901/58be3fa11e9ad58113c0ea45e7063389a7c7d344/10.0.6/_/download/resources/confluence.extra.jira:jirachart-resources/icon-expand-view-up.png) no-repeat}#jira-chart .loading-data{margin-left:250px;margin-top:60px}#jira-chart .moreToCome{padding-left:10px}#jira-chart .dialog-page-menu li button::-moz-focus-inner{margin:0;padding:0}#jira-chart-search-input.one-server.long-field{max-width:525px}#jira-chart-search-input.search-text{max-width:390px}#jira-chart .jiraChartOption{padding:8px 10px}#jira-chart .button-panel-button.disabled{background:linear-gradient(to bottom,#fff 0,#f2f2f2 100%) repeat scroll 0 0 rgba(0,0,0,0);border-color:#ccc;box-shadow:none;color:#999;cursor:default;text-shadow:none}.jirachart-border .jira-chart-macro-img{padding:1px;border:1px solid #CCC}.jira-chart-search-input.one-server{display:inline-block;width:535px}#jira-chart .help-aligment{margin-left:10px;cursor:pointer}.two-dimensional-chart,.two-dimensional-chart-module{display:inline-block}.two-dimensional-chart .chart-border{border:1px solid #CCC;padding:5px;display:inline-block}.two-dimensional-chart.view-mode{overflow:auto}.two-dimensional-chart.preview-mode a,.two-dimensional-chart.preview-mode a:hover{cursor:default;text-decoration:none;color:#333!important}.two-dimensional-chart-table{border-collapse:collapse}.two-dimensional-chart-table th{background-color:#f5f5f5;text-align:left;vertical-align:bottom}.two-dimensional-chart-table td,.two-dimensional-chart-table th{border:1px solid #ccc;padding:4px}.two-dimensional-chart-table .totals{background-color:#f5f5f5;font-weight:700}.two-dimensional-chart-table .jira-issue-status-icon{vertical-align:middle}.two-dimensional-chart .gadget_image img{border:0 none;float:left;margin-right:4px;padding-top:2px}.two-dimensional-chart .default_image{background-position:4px 50%;background-repeat:no-repeat;padding-left:2em}.two-dimensional-chart .default_image_component{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEX///9wcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHAAAAAAAAAAAAAAAAAAAAAAAAAAAACyF7fRAAAACHRSTlMAETNmd4jd7og4lAUAAAAbdEVYdGppcmEtc3lzdGVtLWltYWdlLXR5cGUAaWNvbroqOUUAAAB2SURBVHjaY2YAATXeD8weKS5/HqWoHWexrmCpeS7wX4HpL8MfpkAGxiAmoAoWAQYGESCD8c8HBoY3TCwCIv/WM/xfx3KkgmHH7Q+/HjBAzFFgYPRwYNjBAcQMzQwsDSAMMocBhJkYoABkDgMIs7AIsDKAMFwXAArdImNY1/cUAAAAAElFTkSuQmCCXyMAAAAASUVORK5CYII=)}.two-dimensional-chart .unreleased_unarchived_version{background-image:url(data:image/gif;base64,R0lGODlhEAAQAOYAAIhTAOazK82yecyZAPLp1rqHAMufPtiyVuvewK16AL6OHsmZIO3FePvIWMKjY55sDOy5P/jEUdzGn9CdEa18EOCtI7yOM+nEbcKPAPnSieGvLvrz4+DCe/3Xc9ijEplmAO+8R8mWDee0Nv3pr7aDANe6acGTRraFHqd0APvTe9SgJNasZt2qFdWsTvjQf+fSm8WSANq8eceVH/Tr1v/MZq1zAO67PdCeJrOEDfvbePe9StilGeCtKPfEWfLHcfv47ujCgua1Qr6LAO+7QOWyM8mWB45ZAMiYJs2aI/7KXsKODOOwL9mmJP/Oe+bWnPnx26l3Bf/dh////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUUAFIALAAAAAAQABAAAAeegFKCg4SFhk8lFxyGhCMdKSsPEoyDKSZGRh8OCDkaG4UvQAAfKCgeEBFDCzOEBxYoCQogDREQIhU4hCpRPgYUGSLBE0IJhDc0SQ00DC4eAwMYxYNIST06ts7P0YRIEREgtjvPMMSEMiDgIkseMO0FUOY2wRo8w0IFJPCDLUpMARUVQpAYeAJBoR8xjihhUSQBjheUBBFwgENAxIuDAgEAOw==);vertical-align:middle}.two-dimensional-chart .released_unarchived_version,.two-dimensional-chart .released_archived_version,.two-dimensional-chart .unreleased_archived_version{vertical-align:middle}.two-dimensional-chart .chart-summary{float:left;padding-top:5px}.two-dimensional-chart .show-link-container{display:inline-block}.two-dimensional-chart .show-link-container a{cursor:pointer}.two-dimensional-chart .show-link-container .show-error{color:#d04437}.wiki-content .two-dimensional-chart .aui-lozenge.jira-issue-status-lozenge-green{background-color:#fff;border-color:#abf5d1;color:#00875a}.wiki-content .two-dimensional-chart .aui-lozenge.jira-issue-status-lozenge-blue-gray{background-color:#fff;border-color:#c1c7d0;color:#42526e}.wiki-content .two-dimensional-chart .aui-lozenge.jira-issue-status-lozenge-yellow{background-color:#fff;border-color:#b3d4ff;color:#0052cc}
+/* module-key = 'com.atlassian.confluence.editor:table-resizable-styles', location = 'tinymce3/plugins/table/table-resizable.less' */
+.confluenceTable.fixed-table{table-layout:fixed;width:0px}.confluenceTable.fixed-table .confluenceTh,.confluenceTable.fixed-table .confluenceTd{word-wrap:break-word;overflow:auto}.confluenceTable.fixed-table .confluenceTh img.confluence-embedded-image:not([width]):not([height]),.confluenceTable.fixed-table .confluenceTd img.confluence-embedded-image:not([width]):not([height]){max-width:calc(100% - 4px)}.confluenceTable.fixed-table .confluenceTh .content-wrapper,.confluenceTable.fixed-table .confluenceTd .content-wrapper{overflow-x:auto}.confluenceTable.fixed-table.tablesorter>thead>tr>th.confluenceTh{padding-right:10px}.confluenceTable .confluenceTh,.confluenceTable .confluenceTd{min-width:8px}.confluenceTable .confluenceTh p+.content-wrapper,.confluenceTable .confluenceTd p+.content-wrapper{margin-top:10px}.confluenceTable .content-wrapper+.content-wrapper{margin-top:10px}
+/* module-key = 'com.atlassian.confluence.plugins.status-macro:view_content_status', location = 'css/status-view.less' */
+.status-macro {
+  min-width: 76px;
+  padding: 2px 5px 1px 5px;
+}
+
+/* module-key = 'com.atlassian.confluence.plugins.confluence-mentions-plugin:smart-mentions-viewcontent-resources', location = 'css/fabric-mentions-view.less' */
+.wiki-content a.user-mention{display:inline-block;background:#EBECF0;padding:1px 7px 3px 4px;border-radius:0.5em;border:0;line-height:1em;white-space:nowrap;color:#42526E}.wiki-content a.user-mention:before{all:inherit;content:"@";margin-right:2px;padding:0}.wiki-content a.user-mention:hover,.wiki-content a.user-mention:active{background:#DFE1E5;text-decoration:none}.wiki-content a.user-mention.current-user-mention{background-color:#0052CC;color:#FFFFFF}.wiki-content a.user-mention.current-user-mention:before{color:#FFFFFF}.wiki-content a.user-mention.current-user-mention:hover,.wiki-content a.user-mention.current-user-mention:active{background:#0065FF}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-fixed-headers:confluence-fixed-headers-editor-preview-resources', location = '/css/preview.less' */
+#main{padding-left:40px;padding-right:40px}
+/* module-key = 'com.atlassian.confluence.ext.newcode-macro-plugin:syntaxhighlighter-init', location = 'sh/styles/shCore.css' */
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+  -moz-border-radius: 0 0 0 0;
+  -webkit-border-radius: 0 0 0 0;
+  background: none;
+  border: 0;
+  bottom: auto;
+  float: none;
+  height: auto;
+  left: auto;
+  /* 
+  	changing line-height from 1.1em to 1.2em to fit Chrome & Safari
+  */
+  line-height: 1.2em;
+  margin: 0;
+  outline: 0;
+  overflow: visible;
+  padding: 0;
+  position: static;
+  right: auto;
+  text-align: left;
+  top: auto;
+  vertical-align: baseline;
+  width: auto;
+  box-sizing: content-box;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  min-height: inherit;
+}
+
+.syntaxhighlighter {
+  width: 100%;
+  margin: 1em 0 1em 0;
+  position: relative;
+  overflow: auto;
+  font-size: 1em;
+}
+.syntaxhighlighter.source {
+  overflow: hidden;
+}
+.syntaxhighlighter .bold {
+  font-weight: bold;
+}
+.syntaxhighlighter .italic {
+  font-style: italic;
+}
+.syntaxhighlighter .line {
+  white-space: pre;
+}
+.syntaxhighlighter table {
+  width: 100%;
+}
+.syntaxhighlighter table caption {
+  text-align: left;
+  padding: .5em 0 0.5em 1em;
+}
+.syntaxhighlighter table td.code {
+  width: 100%;
+}
+.syntaxhighlighter table td.code .container {
+  position: relative;
+}
+.syntaxhighlighter table td.code .container textarea {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+  padding-left: 1em;
+  overflow: hidden;
+}
+.syntaxhighlighter table td.gutter .line {
+  text-align: right;
+  padding: 0 0.5em 0 1em;
+}
+.syntaxhighlighter table td.code .line {
+  padding: 0 1em;
+}
+.syntaxhighlighter table td.code .container .line {
+  white-space: pre-wrap;
+}
+.syntaxhighlighter.nogutter td.code .container, .syntaxhighlighter.nogutter td.code .line {
+  padding-left: 0em;
+  white-space: pre-wrap;
+}
+.syntaxhighlighter.show {
+  display: block;
+}
+.syntaxhighlighter.collapsed table {
+  display: none;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  padding: 0.1em 0.8em 0em 0.8em;
+  font-size: 1em;
+  position: static;
+  width: auto;
+  height: auto;
+}
+.syntaxhighlighter.collapsed .toolbar span {
+  display: inline;
+  margin-right: 1em;
+}
+.syntaxhighlighter.collapsed .toolbar span a {
+  padding: 0;
+  display: none;
+}
+.syntaxhighlighter.collapsed .toolbar span a.expandSource {
+  display: inline;
+}
+.syntaxhighlighter .toolbar {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 11px;
+  height: 11px;
+  font-size: 10px;
+  z-index: 10;
+}
+.syntaxhighlighter .toolbar span.title {
+  display: inline;
+}
+.syntaxhighlighter .toolbar a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 1px;
+}
+.syntaxhighlighter .toolbar a.expandSource {
+  display: none;
+}
+ 
+.syntaxhighlighter.ie {
+  font-size: .9em;
+  padding: 1px 0 1px 0;
+}
+.syntaxhighlighter.ie .toolbar {
+  line-height: 8px;
+}
+.syntaxhighlighter.ie .toolbar a {
+  padding-top: 0px;
+}
+/* 
+hide the help link
+*/
+.syntaxhighlighter.collapsed.nogutter .toolbar {
+  display: block;
+}
+.syntaxhighlighter.nogutter .toolbar {
+  display: none;
+}
+/* 
+hide the help link if linenumbers=true
+*/
+.syntaxhighlighter.collapsed .toolbar {
+  display: block;
+}
+.syntaxhighlighter .toolbar {
+  display: none;
+}
+.grid td .noBorder {
+    border-width: 0px ;
+}
+
+pre, .panel .panelContent pre
+{
+    font-family: ConfluenceInstalledFont,monospace;
+}
+
+
+/* adding extra tag to override markup position in css */
+div.panel.pdl {
+    border: 1px solid #ccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+div.panelHeader.pdl {
+    border-bottom-color: #ccc;
+    text-align: left;
+    padding: 5px 15px;
+    background: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+}
+.panelHeader.pdl > b {
+    color: #333;
+}
+.codeHeader.pdl, .panelHeader.pdl, .pdl .panelContent {
+    background: #f5f5f5;
+}
+.pdl .panelContent {
+    color: #333;
+    margin: 0;
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    background: #fff;
+    overflow: hidden;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -moz-border-radius-bottomright: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+}
+.pdl .codeContent {
+    padding: 0;
+}
+.pdl .codeContent .syntaxhighlighter {
+    margin: 0;
+}
+
+.pdl .codeContent .syntaxhighlighter > table td:first-child {
+    padding-left: 15px;
+}
+.pdl .codeContent .gutter {
+    background: #f5f5f5;
+    color: #707070;
+    border-right: 1px solid #ccc;
+}
+.pdl .codeContent .syntaxhighlighter .gutter div.line {
+    background: none;
+    border-right: none;
+}
+.pdl .syntaxhighlighter a, .pdl .syntaxhighlighter div, .pdl .syntaxhighlighter code, .pdl .syntaxhighlighter table, .pdl .syntaxhighlighter table td, .pdl .syntaxhighlighter table tr, .pdl .syntaxhighlighter table tbody, .pdl .syntaxhighlighter table thead, .pdl .syntaxhighlighter table caption, .pdl .syntaxhighlighter textarea {
+    line-height: 20px;
+    font-size: 14px;
+}
+.pdl div.syntaxhighlighter.collapsed .toolbar {
+    padding: 5px 15px;
+    font-size: 1em;
+    background: #f5f5f5;
+    color: #707070;
+    border: none;
+}
+.pdl .syntaxhighlighter.collapsed .toolbar a, .pdl .syntaxhighlighter.collapsed .toolbar a:hover {
+    color: #3b73af;
+}
+
+.pdl .syntaxhighlighter table td.code .container {
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+.codeContent .syntaxhighlighter table td.code .container .line {
+    /* NCODE-183 */
+    white-space: nowrap;
+}
+.codeContent.panelContent.hide-toolbar {
+    display: none;
+}
+.codeContent.panelContent.hide-toolbar.show-border-top {
+    display: inline;
+}
+pre.syntaxhighlighter-pre {
+    line-height: 20px;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 14px;
+    overflow-x: scroll;
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+}
+
+/* module-key = 'com.atlassian.confluence.ext.newcode-macro-plugin:syntaxhighlighter-init', location = 'sh/styles/collapseSource.css' */
+.collapse-source .expand-control-text {
+    vertical-align: top;
+    color: #3b73af;
+}
+
+.collapse-source .expand-control-text:hover {
+    text-decoration: underline;
+}
+
+.panelHeader .collapse-source {
+    right: 15px;
+    position: absolute;
+    top: 5px;
+    float: right;
+    cursor: pointer;
+}
+
+.panelHeader .collapse-spinner-wrapper {
+    position: absolute;
+    float: right;
+    top: 15px;
+    right: 15px;
+}
+
+.panelHeader .code-title {
+    display: inline-block;
+    padding-right: 130px;
+}
+
+.hide-toolbar .syntaxhighlighter.collapsed .toolbar, .hide-toolbar .syntaxhighlighter.expanded .toolbar {
+    display: none !important;
+}
+
+.codeContent.show-border-top {
+    border-top: 1px solid #cccccc;
+}
+
+.panelHeader.hide-border-bottom {
+    border-bottom: none;
+}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-banner:page-banner-preview-resources', location = 'css/page-banner-preview.css' */
+#page-banner-start,#page-metadata-banner{display:none}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-content-report-plugin:resources', location = 'com/atlassian/confluence/plugins/content_report/css/content-report-table.css' */
+.content-report-table-macro{table-layout:fixed}table.aui.content-report-table-macro a{text-decoration:none}table.aui.content-report-table-macro a:focus,table.aui.content-report-table-macro a:hover,table.aui.content-report-table-macro a:active{text-decoration:underline}.content-report-table-macro th:first-child{width:60%}.content-report-table-macro.with-extra-columns th:first-child{width:50%}table.aui.content-report-table-macro>tbody>tr>td.social{text-align:right}table.aui.content-report-table-macro>tbody>tr>td.social span.icon{margin-left:10px}table.aui.content-report-table-macro>tbody>tr>td.social span.count{color:#707070}.content-report-table-macro td,.content-report-table-macro th,.content-report-table-macro th>div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}table.aui.tablesorter.content-report-table-macro>thead>tr>th{background-color:#fff;background-repeat:no-repeat}.more-results{margin:15px 0 0 10px}.blueprint-blank-experience{-webkit-border-radius:5px;border-radius:5px;border:1px solid #ccc;min-height:120px;padding:20px 200px 20px 20px;margin-top:20px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAADkAQMAAAACZjz8AAAABlBMVEX///9wcHB+CbPkAAAAAnRSTlMAM8lDrC4AAABqSURBVHhe7ZjLCcAgEAUXLMCSbN2SLEBY42mT3IQX8hsHYZmbOAfRrl5t2zmGuzSc+cnNd7Pi1ZIfBon+ct9A3/RN38s6+VxdpqPInS4SvXRKvYb39j3R6EhTrp/WN9A3fQPvb97fwM/ZAJWY7fysglrDAAAAAElFTkSuQmCC) right no-repeat}.blueprint-blank-experience div.content{min-height:80px}.blueprint-blank-experience div.content h2{margin-top:0}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-content-report-plugin:resources', location = 'com/atlassian/confluence/plugins/content_report/css/aui-table-override.css' */
+table.aui.content-report-table-macro{border-collapse:collapse;width:100%}table.aui.content-report-table-macro table.aui.content-report-table-macro{margin:0}table.aui.content-report-table-macro>caption{color:#707070;background:#f5f5f5;border-bottom:1px solid #ccc;caption-side:top;padding:7px 10px;text-align:left}table.aui.content-report-table-macro>tbody>tr,table.aui.content-report-table-macro>tfoot>tr{background:#fff;border-bottom:1px solid #ccc;color:#333}table.aui.content-report-table-macro>thead>tr>th,table.aui.content-report-table-macro>tbody>tr>th,table.aui.content-report-table-macro>thead>tr>td,table.aui.content-report-table-macro>tbody>tr>td,table.aui.content-report-table-macro>tfoot>tr>td{padding:7px 10px;text-align:left;vertical-align:top}table.aui.content-report-table-macro>thead{border-bottom:1px solid #ccc}table.aui.content-report-table-macro>tbody>tr:first-child>td,table.aui.content-report-table-macro>tbody>tr:first-child>th,table.aui.content-report-table-macro>tfoot>tr:first-child>td{border-top:1px solid #ccc}table.aui.content-report-table-macro>thead>tr>th>ul.menu,table.aui.content-report-table-macro>tbody>tr>th>ul.menu,table.aui.content-report-table-macro>tbody>tr>td>ul.menu,table.aui.content-report-table-macro>tfoot>tr>td>ul.menu{list-style-type:none;margin:0;padding:0}table.aui.content-report-table-macro>thead>tr>th>ul.menu>li,table.aui.content-report-table-macro>tbody>tr>th>ul.menu>li,table.aui.content-report-table-macro>tbody>tr>td>ul.menu>li,table.aui.content-report-table-macro>tfoot>tr>td>ul.menu>li{float:left;margin:0 10px 0 0;width:auto}
+/* module-key = 'confluence.macros.advanced:children-resource', location = 'com/atlassian/confluence/plugins/macros/advanced/css/children.css' */
+ul.childpages-macro{margin-top:0}
+/* module-key = 'confluence.macros.advanced:index-macro-resources', location = 'com/atlassian/confluence/plugins/macros/advanced/css/index-macro.less' */
+div.index-macro-info{margin-top:1em;margin-bottom:1em}div.index-macro-info h4{display:inline-block}div.index-macro-info .excerpt-info{float:right;color:#707070}div.index-macro-info .excerpt-info .aui-icon.aui-iconfont-info{color:#3572b0}
+/* module-key = 'confluence.macros.advanced:content-by-label-resources', location = 'com/atlassian/confluence/plugins/macros/advanced/css/content-by-label.css' */
+ul.content-by-label{margin:10px 0;padding:0;list-style:none}.content-by-label>li{overflow:auto;margin-top:7px}.content-by-label>li:first-child{margin-top:0}.content-by-label>li>div:first-child{float:left}.content-by-label>li .details{padding-left:21px}.content-by-label .label-details{overflow:auto}.content-by-label .label-container{float:left;background:#f2f2f2;padding:2px 4px;border:1px solid #DDD;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;margin:3px 6px 3px 0;line-height:1;font-size:13px}.content-by-label .remove-label{display:none}.content-by-label .details a+.smalltext{font-size:inherit}.content-by-label.macro-blank-experience{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAACeCAMAAADuZ6PHAAAAyVBMVEX////////////l5eXf39/a2trX19fFxcW/v7+np6elpaWjo6OhoaGZmZmRkZGPj4+FhYV7e3t3d3f////7+/v5+fn39/f19fX09PTw8PDt7e3r6+vp6enn5+fj4+Ph4eHf39/a2trU1NTR0dHPz8/MzMzJycnHx8fFxcW8vLy5ubmzs7Ourq6rq6upqamnp6elpaWjo6Ofn5+cnJyZmZmUlJSRkZGPj4+Li4uIiIiDg4OBgYF+fn57e3t3d3d0dHRycnJwcHBvb2+4GBuHAAAAQ3RSTlMAESIiIiIiIiIiIiIiIiIiIiIiMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzFZIWTgAAAt1JREFUeNrt2u1WElEYhuEX0EQt096BQLS0zLLCIC3ycz7O/6DiR88KklZbdDf3j30fwbX2PAwzLCyVSqVSqVQqlUqlUpFrNJt+j5rNRnSR37+4Kp0QASXR0jUiXrXORl4FVubb6wfxUBLtCRTs2lrV5Ytz2ToS3ae8rYOKQdqolqpYi2PyaXm1ZDsDmR6bVC1d2ZYJQFKbMgFI6rlMHJJMJJJMJJJMJJJMJJJMJJJMJJJMJJJMJJJMJJJMJJJMIJJMFJJM8UnFaCVz92xlVISZopOGmatsGGaKS8pbPlsrDzLFJOU9n68XZopIarlSrSokKx9W9lfS2O82rpVU7Prddos6SWe+qLM6Sce+qOM6SQNf1F6dJF9cIoWQ0pZCPnHpvhRy907fcX905EodVSGBnpcU6KlSgZ69FeANJSIpvPikkkfKeaRtFqnp7us80gGL1NC+ISSNaYtD0pVbBZF05XIOScfUBpF0TAWHpIGvgUg6ph0OScc0KDkkHVMbRNI/YTYfjVQ+Qtf7Pm2CIKkfXZkwpPK8IxOGVH7NZMKQypHOCUBSQ5kAJHUqE4CkvshEIMmkjXNI2jiJpHNCkNTowabvImE2PumKRDmni+4g2h+bny0n6vWvDGW67PcvKyOZrvq9i6oykOl68HIqqoxjuhl0J5VICNPNfjapREKYbl9l3yqREKbb19n5r40bw5QfZmfauCFMxaGPK23cCKbijY9/b9wApuKtD2c2bvWbinf+eXbjVrupfO+f5jZutZs++Mf5jVvtppOT2Y2LxNq4Kc7GTXE2boqzcVOcjVv5fzrVe8u/Nx5Kiv+7ijYeSor/bq6Nh5Livwdr4yIB9qSNi4TZk0g1mEAkbRxBUmOZOCSZGCSZtKcAEuP+JBJl4yLRzsnmIzyrGM9kPJPxTMYzGc9kPJPxTMYzGc9kPJPxTMYzGc9kPJPxTMYzGc9kKNOmSCDTkxcicUx+8PQnFrVulGK1xDgAAAAASUVORK5CYII=) right no-repeat}.content-by-label .content-label-header{font-size:20px;font-weight:normal}.content-by-label .smalltext .error{display:inline-block}
+/* module-key = 'com.atlassian.confluence.plugins.expand-macro:expand-macro-css-only', location = 'com/atlassian/confluence/plugins/expand/css/expand-macro.css' */
+@media all{.expand-content{margin:0 0 10px 20px}.expand-control-icon{width:20px}.expand-control-text{vertical-align:top;color:#0052cc}.expand-control-text:hover{text-decoration:underline}.expand-control-image{vertical-align:middle;text-decoration:none}}@media screen{.expand-hidden{display:none;opacity:0}.expand-control{cursor:pointer;text-decoration:none;margin-bottom:10px}}@media print{.expand-content{display:block!important}}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-layout:pagelayout-content-styles', location = 'css/pagelayout/page-layout-content.css' */
+.wiki-content .contentLayout2 .columnLayout .cell{padding-left:15px;padding-right:15px}.wiki-content .contentLayout2{margin:0 -15px}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles', location = 'css/inline-tasks.css' */
+.shortcutsmenu ul.inline-task-list>li{padding-left:22px;background-position:0 3px;margin-left:-17px}.wiki-content ul.inline-task-list>li{list-style:none;padding-left:22px;margin-bottom:2px;margin-left:-22px;background-repeat:no-repeat;background-size:1em 1em;background-position:0 3px}.wiki-content td>ul.inline-task-list>li,.wiki-content th>ul.inline-task-list>li{padding-left:22px;margin-left:-17px}ul.inline-task-list img{vertical-align:top}ul.inline-task-list .jira-issue,ul.inline-task-list .unknown-jira-issue{margin-top:-3px;margin-bottom:3px}ul.inline-task-list .jira-issue,ul.inline-task-list .unknown-jira-issue{margin-top:-3px;margin-bottom:3px}.wiki-content ul.inline-task-list>li.checked,.wiki-content ul.inline-task-list>li.checked>*,.wiki-content ul.inline-task-list>li.checked>*>a{color:#5e6c84}.wiki-content ul.inline-task-list>li.checked>ul.inline-task-list{color:#42526e}.wiki-content ul.inline-task-list>li.checked>span[style],.wiki-content ul.inline-task-list>li.checked>*>span[style]{color:#5e6c84!important}#inline-tasks-notice{position:fixed;display:block;top:0;right:0;left:0;width:30%;margin:15px auto auto auto;z-index:999;text-align:center}.task-blanket{display:none;background:#fff;height:100%;left:0;opacity:.5;position:absolute;top:0;width:100%;z-index:2500}.wiki-content ul.inline-task-list>li.focused{background-color:#ebf2f9}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles', location = 'css/checkboxes.css' */
+ul.inline-task-list>li{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjRkFGQkZDIiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iI0E1QURCQSIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PC9nPjwvc3ZnPg==)}ul.inline-task-list>li.hover{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjRUJFQ0YwIiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iI0E1QURCQSIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PC9nPjwvc3ZnPg==)}ul.inline-task-list>li.task-active{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjREVFQkZGIiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iIzAwNjVGRiIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PC9nPjwvc3ZnPg==)}ul.inline-task-list>li.disabled,.content-preview ul.inline-task-list>li{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjRjRGNUY3IiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iI0RGRTFFNSIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PC9nPjwvc3ZnPg==)}ul.inline-task-list>li.checked{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjNDI1MjZFIiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iIzQyNTI2RSIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PHBhdGggZD0iTTQuNzA3IDYuMzc4YS45NzUuOTc1IDAgMCAwLTEuNDE0IDAgMS4wNjQgMS4wNjQgMCAwIDAgMCAxLjQ2NmwyIDIuMDc0YS45NzUuOTc1IDAgMCAwIDEuNDE0IDBsNC00LjE0OGMuMzktLjQwNS4zOS0xLjA2MSAwLTEuNDY2YS45NzUuOTc1IDAgMCAwLTEuNDE0IDBMNiA3LjcxOSA0LjcwNyA2LjM3OHoiIGZpbGw9IiNGRkYiLz48L2c+PC9zdmc+)}ul.inline-task-list>li.checked.hover{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjNUU2Qzg0IiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iIzVFNkM4NCIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PHBhdGggZD0iTTQuNzA3IDYuMzc4YS45NzUuOTc1IDAgMCAwLTEuNDE0IDAgMS4wNjQgMS4wNjQgMCAwIDAgMCAxLjQ2NmwyIDIuMDc0YS45NzUuOTc1IDAgMCAwIDEuNDE0IDBsNC00LjE0OGMuMzktLjQwNS4zOS0xLjA2MSAwLTEuNDY2YS45NzUuOTc1IDAgMCAwLTEuNDE0IDBMNiA3LjcxOSA0LjcwNyA2LjM3OHoiIGZpbGw9IiNGRkYiLz48L2c+PC9zdmc+)}ul.inline-task-list>li.checked.task-active{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjQjNENEZGIiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iIzAwNjVGRiIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PHBhdGggZD0iTTQuNzA3IDYuMzc4YS45NzUuOTc1IDAgMCAwLTEuNDE0IDAgMS4wNjQgMS4wNjQgMCAwIDAgMCAxLjQ2NmwyIDIuMDc0YS45NzUuOTc1IDAgMCAwIDEuNDE0IDBsNC00LjE0OGMuMzktLjQwNS4zOS0xLjA2MSAwLTEuNDY2YS45NzUuOTc1IDAgMCAwLTEuNDE0IDBMNiA3LjcxOSA0LjcwNyA2LjM3OHoiIGZpbGw9IiNGRkYiLz48L2c+PC9zdmc+)}ul.inline-task-list>li.checked.disabled,.content-preview ul.inline-task-list>li.checked{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxkZWZzPjxyZWN0IGlkPSJhIiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHJ4PSIyIi8+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHVzZSBmaWxsPSIjQzFDN0QwIiB4bGluazpocmVmPSIjYSIvPjxyZWN0IHN0cm9rZT0iI0MxQzdEMCIgeD0iLjUiIHk9Ii41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIyIi8+PHBhdGggZD0iTTQuNzA3IDYuMzc4YS45NzUuOTc1IDAgMCAwLTEuNDE0IDAgMS4wNjQgMS4wNjQgMCAwIDAgMCAxLjQ2NmwyIDIuMDc0YS45NzUuOTc1IDAgMCAwIDEuNDE0IDBsNC00LjE0OGMuMzktLjQwNS4zOS0xLjA2MSAwLTEuNDY2YS45NzUuOTc1IDAgMCAwLTEuNDE0IDBMNiA3LjcxOSA0LjcwNyA2LjM3OHoiIGZpbGw9IiNGRkYiLz48L2c+PC9zdmc+)}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles', location = 'css/diff.css' */
+.wiki-content span.inline-task{display:inline-block;width:16px;height:16px;margin-right:5px;background-image:url("data:image/svg+xml,%3Csvgwidth='14'height='14'xmlns='http://www.w3.org/2000/svg'xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Crectid='a'width='14'height='14'rx='2'/%3E%3C/defs%3E%3Cgfill='none'fill-rule='evenodd'%3E%3Cusefill='%23F4F5F7'xlink:href='%23a'/%3E%3Crectstroke='%23DFE1E5'x='.5'y='.5'width='13'height='13'rx='2'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat;background-size:1em 1em;background-position:0 3px;padding-bottom:1px}.wiki-content span.inline-task.checked{background-image:url("data:image/svg+xml,%3Csvgwidth='14'height='14'xmlns='http://www.w3.org/2000/svg'xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Crectid='a'width='14'height='14'rx='2'/%3E%3C/defs%3E%3Cgfill='none'fill-rule='evenodd'%3E%3Cusefill='%2342526E'xlink:href='%23a'/%3E%3Crectstroke='%2342526E'x='.5'y='.5'width='13'height='13'rx='2'/%3E%3Cpathd='M4.7076.378a.975.975000-1.41401.0641.06400001.466l22.074a.975.9750001.4140l4-4.148c.39-.405.39-1.0610-1.466a.975.975000-1.4140L67.7194.7076.378z'fill='%23FFF'/%3E%3C/g%3E%3C/svg%3E")}.wiki-content ul.inline-task-list.diff-inline-task-list li{background-image:none;padding-left:0}.wiki-content .diff-inline-task-overlay{display:inline-block;text-align:center;height:1.5em;padding:5px 0 1px 5px;margin-left:-5px;margin-right:5px}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-view', location = 'css/inline-tasks-view.css' */
+ul.inline-task-list time.date-upcoming,ul.inline-task-list>li ul.inline-task-list time.date-upcoming,ul.inline-task-list>li ul.inline-task-list>li ul.inline-task-list time.date-upcoming{color:#ff8b00;font-weight:500}ul.inline-task-list time.date-past,ul.inline-task-list>li ul.inline-task-list time.date-past,ul.inline-task-list>li ul.inline-task-list>li ul.inline-task-list time.date-past{color:#de350b;font-weight:500}ul.inline-task-list>li ul.inline-task-list>li time,ul.inline-task-list>li ul.inline-task-list>li ul.inline-task-list>li time{color:#42526e;font-weight:normal}ul.inline-task-list>li.checked time,ul.inline-task-list>li ul.inline-task-list>li.checked time,ul.inline-task-list>li ul.inline-task-list>li ul.inline-task-list>li.checked time{color:#5e6c84;font-weight:normal}.wiki-content ul.inline-task-list>li.checked>.current-user-mention,.wiki-content ul.inline-task-list>li.checked>*>a.current-user-mention,.wiki-content ul.inline-task-list>li.checked>.current-user-mention::before,.wiki-content ul.inline-task-list>li.checked>*>a.current-user-mention::before{color:#deebff}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-ui-components:blank-placeholder-box', location = 'css/blank-placeholder-box.css' */
+.blank-placeholder-box{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:1px solid #ccc;min-height:120px;padding:20px 200px 20px 20px;margin-top:20px;max-width:800px;margin-left:auto;margin-right:auto}.blank-placeholder-box .content{min-height:80px}.blank-placeholder-box .content h2{margin-top:0}.columnLayout.threeColumns .blank-placeholder-box,.columnLayout .cell.aside .blank-placeholder-box,.columnLayout.three-equal .blank-placeholder-box,.columnLayout.sidebars .blank-placeholder-box{background:0;padding:20px}
+/* module-key = 'com.atlassian.auiplugin:aui-table-sortable', location = 'src/less/aui-experimental-tables-sortable.less' */
+/*! AUI Sortable Tables */.aui-table-sortable .tablesorter-header{cursor:pointer;border-bottom:2px solid #dfe1e6}.aui-table-sortable .tablesorter-header.aui-table-column-unsortable{cursor:default}.aui-table-sortable .tablesorter-header:focus,.aui-table-sortable .tablesorter-header:hover{background-color:rgba(9,30,66,0.08)}.aui-table-sortable .tablesorter-header:active{background-color:#deebff;border-color:#0747a6;color:#0747a6}.aui-table-sortable .tablesorter-headerAsc,.aui-table-sortable .tablesorter-headerDesc{background-color:transparent;color:#172b4d}table.aui.aui-table-sortable .tablesorter-header:active{border-bottom:2px solid #0747a6}table.aui.aui-table-sortable .tablesorter-headerAsc,table.aui.aui-table-sortable .tablesorter-headerDesc{border-bottom:2px solid #7a869a}table.aui.aui-table-sortable .tablesorter-header.aui-table-column-unsortable:focus,table.aui.aui-table-sortable .tablesorter-header.aui-table-column-unsortable:hover,table.aui.aui-table-sortable .tablesorter-header.aui-table-column-unsortable:active{background-color:inherit;border-color:inherit;color:#7a869a}.aui-table-sortable .aui-table-header-content::after{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:0;font-family:"Adgs Icons";font-weight:normal;font-style:normal;speak:none;content:"";display:inline-block;height:16px;line-height:1;font-size:16px;margin-left:5px;position:relative;width:16px;vertical-align:text-bottom}.aui-table-sortable .tablesorter-header:focus .aui-table-header-content::after,.aui-table-sortable .tablesorter-header:hover .aui-table-header-content::after{content:"\f140";opacity:0.5}.aui-table-sortable .tablesorter-headerAsc .aui-table-header-content::after,.aui-table-sortable .tablesorter-headerAsc:focus .aui-table-header-content::after,.aui-table-sortable .tablesorter-headerAsc:hover .aui-table-header-content::after{content:"\f140";opacity:1}.aui-table-sortable .tablesorter-headerDesc .aui-table-header-content::after,.aui-table-sortable .tablesorter-headerDesc:focus .aui-table-header-content::after,.aui-table-sortable .tablesorter-headerDesc:hover .aui-table-header-content::after{content:"\f1ac";opacity:1}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-inline-tasks:tasks-report-resources', location = 'css/tasks-report.css' */
+table.tasks-report{margin:1px 0}table.tasks-report thead th:first-letter {text-transform:uppercase}table.tasks-report td.labels{white-space:normal;word-wrap:break-word;word-break:break-all;overflow:hidden}.blank-placeholder-box.tasks-report-blank{background:url('data:image/png;base64,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') right no-repeat}table.aui-table-sortable td ul.inline-task-list{padding-left:15px;margin-left:0}table.aui-table-sortable th{white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}table.tasks-report thead th.header-description{background:0;width:60%}table.tasks-report tbody td.tasks-report-assignee{white-space:nowrap}table.aui-table-sortable tbody td.tasks-report-date{white-space:nowrap}.macro-auto-pagination[aria-disabled="true"] li a{cursor:default;color:#999}.table-wrapper{position:relative}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-embedded-file-view-resources', location = '/css/embedded-file-view.less' */
+.wiki-content .confluence-embedded-file-wrapper .confluence-embedded-file{cursor:pointer}.wiki-content .confluence-embedded-file-wrapper .overlay{position:absolute;bottom:5px;left:7px;right:5px;color:#fff;line-height:16px;font-size:12px;font-weight:normal;font-style:normal;font-family:Arial,sans-serif;cursor:pointer}.wiki-content .confluence-embedded-file-wrapper .overlay .comment-count-overlay{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:rgba(0,0,0,0.8);border-radius:3px;padding:5px;display:block;float:left;margin-right:2px;background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxNyAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+PHBhdGggZD0iTTE2IDEuOTkzdjExLjAyNWMtLjAxNC40ODItLjU1MS45OTItMSAuOTkyaC0zLjVsLTIuOTg3IDQuMjktMy4wMTMtNC4yOWgtMy40OTVjLS41NTQgMC0xLjAwNS0uNDQ1LTEuMDA1LS45OTJ2LTExLjAyNWMwLS41NDguNDUxLS45OTMgMS4wMDUtLjk5M2gxMi45OTVjLjU2IDAgLjk5NS40NCAxIC45OTN6bS0xMy45OTUtMS45OTNjLTEuMTA3IDAtMi4wMDUuODk1LTIuMDA1IDEuOTkzdjExLjAyNWMwIDEuMS44OTQgMS45OTIgMi4wMDUgMS45OTJoMi45OTVsMy41IDQuOTkzIDMuNS00Ljk5M2gzYzEuMTAxIDAgMi4wMTEtLjg5MiAyLTEuOTkydi0xMS4wMjVjLS4wMTEtMS4xLS44OTEtMS45OTMtMi0xLjk5M2gtMTIuOTk1eiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);background-position:center 6px;background-repeat:no-repeat;width:26px;height:26px;text-align:center}.wiki-content .confluence-embedded-file-wrapper .overlay .comment-count-overlay .content{font-size:10px;text-align:center;vertical-align:text-top}.wiki-content .confluence-embedded-file-wrapper .overlay .file-type-desc-overlay{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:rgba(0,0,0,0.8);border-radius:3px;padding:5px;display:block;float:left;max-width:100%}.wiki-content .confluence-embedded-file-wrapper .overlay .file-type-desc-overlay .aui-icon{display:inline-block;left:0px;line-height:0px;position:relative;vertical-align:text-top;top:auto}.wiki-content .confluence-embedded-file-wrapper .overlay .file-type-desc-overlay .content{vertical-align:middle}.wiki-content .confluence-embedded-file-wrapper.has-comment-overlay .file-type-desc-overlay{max-width:84%}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources', location = '/css/vfm.css' */
+.confluence-embedded-file-wrapper{position:relative;display:inline-block;max-width:100%}.confluence-embedded-file-wrapper .confluence-embedded-file{display:block;margin-left:2px;margin-right:2px;max-width:100%}.confluence-embedded-file-wrapper .confluence-embedded-file img{display:block;border:1px solid #ddd;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.confluence-embedded-file-wrapper .confluence-embedded-file .title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;color:#333;font-size:14px;font-weight:normal;font-style:normal;font-family:Arial,sans-serif;position:absolute;top:50%;left:0;text-align:center;padding:30px 10px 0 10px}
+/* module-key = 'confluence.extra.layout:resources', location = 'com/atlassian/confluence/extra/layout/css/styles.css' */
+.sectionMacro{margin-top:10px;display:table;width:100%}.sectionMacroRow{display:table-row}.columnMacro{display:table-cell;vertical-align:top}.sectionMacro>:not(.sectionMacroRow),.sectionMacroWithBorder>:not(.sectionMacroRow){display:table-caption}.sectionMacro .columnMacro{border:0;padding:0}.sectionMacro .columnMacro+.columnMacro{padding-left:20px}.sectionMacroWithBorder{margin-top:10px;display:table;width:100%}.sectionMacroWithBorder .columnMacro{border-style:dashed;border-width:1px;border-color:#ccc;padding:10px}.sectionColumnWrapper{display:block;overflow-x:auto}
+/* module-key = 'org.randombits.confluence.toc:toc-plugin-styles', location = 'net/customware/confluence/plugin/toc/css/toc.css' */
+.toc-macro ul.toc-indentation{margin-top:0}.toc-macro{font-size:14px}.toc-macro span.toc-outline{padding-right:5px}.toc-macro.hidden-outline span.toc-outline{display:none}.toc-macro li.toc-empty-item{list-style-type:none}@media print{.toc-macro.non-printable{display:none}}

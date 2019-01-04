@@ -1,0 +1,204 @@
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:styles', location = '/css/confluence-copy-page-hierarchy-plugin.css' */
+#copy-page-dialog .aui-dialog2-content {
+    overflow: visible;
+}
+
+#copy-page-dialog .aui-dropdown {
+    width: 100%;
+}
+
+#copy-page-dialog .aui-dialog2-content #destination-options .field-group {
+    padding-left: 145px;
+}
+
+#copy-page-dialog .aui-dialog2-content #destination-options .field-group > input,
+#copy-page-dialog .aui-dialog2-content #destination-options .field-group .autocomplete {
+    max-width: 350px;
+}
+
+.page-hierarchy-dialog .options {
+    width: calc(100% - 540px);
+    height: calc(100% - 20px);
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    padding: 20px;
+    padding-bottom: 0px;
+    overflow: auto;
+}
+
+.page-hierarchy-dialog .aui-dialog2-content {
+    position: relative;
+}
+
+.page-hierarchy-dialog .aui-dialog2-footer-hint {
+    float: left;
+}
+
+.page-hierarchy-dialog .preview {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 96px;
+    box-sizing: border-box;
+    width: 500px;
+    padding: 20px;
+    border-right: 1px solid #cccccc;
+    overflow: auto;
+}
+
+.page-hierarchy-dialog .aui-message {
+    margin-bottom: 10px;
+}
+
+.page-hierarchy-dialog #preview #parentPage {
+    margin-top: 10px;
+}
+
+.page-hierarchy-dialog #preview .preview_main #currentPage {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px 5px 0px 5px;
+    margin-left: 10px;
+}
+
+.page-hierarchy-dialog #preview .preview_main.no-parent #currentPage {
+    margin-left: 0px;
+}
+
+.page-hierarchy-dialog #preview .preview_main .title span.replaced {
+    background-color: rgba(246, 195, 66, 0.3);
+}
+
+.page-hierarchy-dialog #preview .preview_main ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.page-hierarchy-dialog #preview .preview_main #children {
+    margin-left: 20px;
+}
+
+.page-hierarchy-dialog #preview .preview_main.no-parent #children {
+    margin-left: 10px;
+}
+
+.page-hierarchy-dialog #preview #children .child {
+    padding: 10px 5px 0px 5px;
+    list-style: none;
+}
+
+.page-hierarchy-dialog #preview #children .child.edit-restricted > .title {
+    color: #cccccc;
+}
+
+.page-hierarchy-dialog #preview #children .child.has-children > .indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 0px;
+    margin-top: 3px;
+    margin-right: 5px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.page-hierarchy-dialog #preview #children .child.has-children.is-expanded > .indicator,
+.page-hierarchy-dialog #preview #currentPage .indicator,
+.page-hierarchy-dialog #preview #parentPage .indicator {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAMUlEQVQoz2NgGGag4ExBB5TVUXAGm4KOgv8FM4H0TAiNTUkaUOouEKfhtiYNr/SQBQAsPRRMJnnlygAAAABJRU5ErkJggg==);
+}
+
+.page-hierarchy-dialog #preview #children .child.has-children > .indicator {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAALElEQVQoz2NgGGSg4EzBTPwKOgr+F6ThVzKTsJK7Bf/JN4GgG4C+6GAYigAASNYUTGaVYwsAAAAASUVORK5CYII=);
+}
+
+.page-hierarchy-dialog #preview #children .child > .indicator {
+    background: #999;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    float: left;
+    margin-top: 9px;
+    margin-right: 12px;
+    margin-left: 5px;
+}
+
+.page-hierarchy-dialog #preview #currentPage .indicator,
+.page-hierarchy-dialog #preview #parentPage .indicator {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-right: 5px;
+    margin-left: 0px;
+    float: left;
+}
+
+.page-hierarchy-dialog #preview #children .child > .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-hierarchy-dialog #preview .incoming-links {
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+.page-hierarchy-dialog #preview .incoming-links:before {
+    content: ' ';
+}
+
+.page-hierarchy-dialog #preview #children .child > .children {
+    margin-left: 10px;
+}
+
+.page-hierarchy-dialog .button-spinner {
+    display: inline-block;
+    padding-right: 40px;
+    padding-bottom: 5px;
+}
+
+/* Utils */
+.page-hierarchy-dialog .inline-message {
+    margin: 20px 0px;
+}
+
+.page-hierarchy-dialog .inline-message.bottom-margin {
+    margin: 0px 0px 10px 0px;
+}
+
+.page-hierarchy-dialog .inline-message > span.aui-icon {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 3px;
+    vertical-align: top;
+}
+
+.page-hierarchy-dialog .inline-message > div {
+    display: inline-block;
+    width: calc(100% - 50px);
+    clear: right;
+}
+
+.page-hierarchy-dialog .aui-icon.warning,
+.page-hierarchy-dialog .inline-message.inline-warning > span.aui-icon {
+    color: #f6c342;
+}
+
+.page-hierarchy-dialog .inline-message.inline-error > span.aui-icon {
+    color: #d04437;
+}
+
+.page-hierarchy-dialog .custom-field-group:not(.disabled) > label {
+    color: #333333;
+}
+
+.page-hierarchy-dialog .custom-field-group > input {
+    margin-right: 10px;
+}
+
+.page-hierarchy-dialog .aui-icon.standalone {
+    margin: 0px 5px;
+}

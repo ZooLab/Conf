@@ -1,0 +1,2993 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'com.atlassian.auiplugin:internal-src-js-aui-progress-indicator', location = 'src/js/aui/progress-indicator.js' */
+("undefined"===typeof window?global:window).__6e7c4718c7a654752224497662064b97=function(){function j(a){return a&&a.__esModule?a:{"default":a}}function s(a,b,d){(0,t.recomputeStyle)(a);a.css("width",100*d+"%");b.attr("data-value",d)}function u(a,b,d){var e=d.currentProgress,c=d.value,a=(0,k.default)(a),f=(0,k.default)(b);"number"===typeof c&&(1>=c&&0<=c)&&(f.trigger(x,[e,c]),(0,y.supportsCssTransition)()?(a.one(z,function(){f.trigger(v,[e,c])}),s(a,f,c)):(s(a,f,c),f.trigger(v,[e,c])))}function w(a){var a=
+(0,k.default)(a).first(),b=a.children(".aui-progress-indicator-value");a.removeAttr("data-value");(0,t.recomputeStyle)(a);b.css("width","")}function q(a){return l.default.isNumber(a)&&l.default.isFinite(a)&&!l.default.isNaN(a)}function g(a){var b=1<arguments.length&&void 0!==arguments[1]?arguments[1]:1,d=parseFloat(a);return q(d)?d:Number(b)}function m(a){var b=1<arguments.length&&void 0!==arguments[1]?arguments[1]:1;return Number(parseFloat(a).toFixed(b))}function n(a){var b=a.max,b=0<b?b:f.max,
+a=Math.max(0,Math.min(a.val,b)),d=m(a/b,6),e=m(100*d,2);return{max:b,val:a,valAsFraction:d,valAsPercent:e}}function h(a){var b=n(a._data),d=b.val,e=b.valAsFraction,b=b.max,c=a.querySelector(".aui-progress-indicator"),f=c.getAttribute("data-value");a.indeterminate?(c.removeAttribute("aria-valuenow"),w(c)):(c.setAttribute("aria-valuenow",d),c.setAttribute("aria-valuemax",b),u(c.querySelector(".aui-progress-indicator-value"),c,{currentProgress:f,value:e}))}var o={};"use strict";Object.defineProperty(o,
+"__esModule",{value:!0});var k=j(__700a145ba3db9966cc95664c892049f8),l=j(__59c1c30030f41c99b6757d449d9a3a7b),p=j(__8548ccf5d6767d1d4e6633309de41309),t=__6debdf74a4da8ac8391a98223e1bae21,y=__7a2976c482edfafd9b5879a49ffe0535,e;e=__921ad9514d56376fef992861d9ec0f51;if(!e||!e.__esModule){var r={};if(null!=e)for(var i in e)Object.prototype.hasOwnProperty.call(e,i)&&(r[i]=e[i]);r.default=e;e=r}i=j(__28c84e7bb75f6c3b0ba124d57bd69571);var v="aui-progress-indicator-after-update",x="aui-progress-indicator-before-update",
+z="transitionend webkitTransitionEnd",f={indeterminate:!1,max:1,val:0};(0,p.default)("aui-progressbar",{template:function(a){a._data.max=g(a.getAttribute("max"),f.max);a._data.val=g(a.getAttribute("value"),f.val);a._data.indeterminate=a.hasAttribute("indeterminate");var b=n(a._data),d=b.valAsFraction;a.innerHTML='<div class="aui-progress-indicator"\n         '+(a._data.indeterminate?"":'data-value="'+d+'"')+'\n         role="progressbar"\n         aria-valuemin="0"\n         aria-valuenow="'+b.val+
+'"\n         aria-valuemax="'+b.max+'"\n         tabindex="0"\n     >\n        <span class="aui-progress-indicator-value" style="width: '+b.valAsPercent+'%"></span>\n    </div>'},attached:function(a){h(a)},attributes:{indeterminate:{created:function(a){a.indeterminate=!0},removed:function(a){a.indeterminate=!1}},value:{value:f.val,fallback:function(a,b){if(a._updating)return!1;a._data.val=g(b.newValue,b.oldValue||f.val);h(a)}},max:{value:f.max,fallback:function(a,b){if(a._updating)return!1;a._data.max=
+g(b.newValue,b.oldValue||f.max);h(a)}}},prototype:{get _data(){return this.__data||(this._data=l.default.defaults({},f))},set _data(a){return this.__data=a},get indeterminate(){return this._data.indeterminate},set indeterminate(a){this._data.indeterminate=!!a;h(this)},get value(){return n(this._data).val},set value(a){if(!q(a))return!1;a={newValue:m(a,6)};this._updating=!0;this.setAttribute("value",a.newValue);this._updating=!1;this._data.val=g(a.newValue,a.oldValue||f.val);h(this)},get max(){return n(this._data).max},
+set max(a){if(!q(a))return!1;a={newValue:m(a,6)};this._updating=!0;this.setAttribute("max",a.newValue);this._updating=!1;this._data.max=g(a.newValue,a.oldValue||f.max);h(this)}}});p={update:e.fn(function(a,b){if("string"===typeof a){var d=document.getElementById(a);d&&(a=d)}var d=(0,k.default)(a).first(),e=d.children(".aui-progress-indicator-value"),c=d.attr("data-value"),f=!c,g=parseFloat(c)||0;if(c=c&&g===b)c=parseFloat(e.get(0).style.width)||0,c=g===100*c;if(!c)return f&&e.css("width",0),u(e,d,
+{currentProgress:g,value:b}),d},"AJS.progressBars.update",{sinceVersion:"7.7.0",extraInfo:"Use the <aui-progressbar> web component instead"}),setIndeterminate:e.fn(w,"AJS.progressBars.setIndeterminate",{sinceVersion:"7.7.0",extraInfo:"Use the <aui-progressbar> web component instead"})};(0,i.default)("progressBars",p);o.default=p;return o=o["default"]}.call(this);
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:util', location = '/js/util/analytics-event.js' */
+define('confluence/page-hierarchy/util/analytics-event', [
+    'ajs'
+], function (AJS) {
+    return {
+        /**
+         * Triggers an analytics event.
+         * @param {string} name The name of the event
+         *                      Needs to be whitelisted in analytics_whitelist.json
+         * @returns {undefined}
+         */
+        publish: function analyticsEvent(name) {
+            try {
+                AJS.trigger('analyticsEvent', {
+                    name: name,
+                    data: {}
+                });
+            } catch (e) {
+                // ¯\_(ツ)_/¯
+            }
+        },
+        /************************************* DELETE ****************************************/
+        /* When the flow is started. ie. Delete button clicked */
+        DELETE_HIERARCHY_START_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.start',
+        /* When the flow is started for an existing long-running task id */
+        DELETE_HIERARCHY_START_EXISTING_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.start.existing',
+        /* When the user clicks next after selecting to include child pages */
+        DELETE_HIERARCHY_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.hierarchy',
+        /* When the user clicks 'Delete' from the dialog (whether single page or with children) */
+        DELETE_HIERARCHY_SUBMIT_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.hierarchy.submit',
+        /* When the user clicks 'Back' from the preview dialog to go back to the initial dialog */
+        DELETE_HIERARCHY_BACK_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.hierarchy.back',
+        /* When the delete is done but either the user hasn't dismissed the flag, or there are errors to review */
+        DELETE_HIERARCHY_DONE_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.done',
+        /* When the entire flow is finished */
+        DELETE_HIERARCHY_FINISHED_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.finished',
+        /* If there are errors with pages and the user clicks 'View failed pages' */
+        DELETE_HIERARCHY_VIEW_ERROR_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.view.errors',
+        /* When the user sees the flag that some pages failed to delete */
+        DELETE_FLAG_WARNING_SOME_PAGES_FAILED: 'confluence.page.hierarchy.delete.flag.warning.some.pages.failed',
+        /* When the user sees an error dialog that the whole delete failed */
+        DELETE_FLAG_ERROR_ALL_PAGES: 'confluence.page.hierarchy.delete.flag.error.all.pages',
+        /* When the user sees the success flag on a successful deleted */
+        DELETE_FLAG_SUCCESS: 'confluence.page.hierarchy.delete.flag.success',
+        /* When the user closes the success/error flag */
+        DELETE_CLOSE_FLAG: 'confluence.page.hierarchy.delete.close.flag',
+        /* When the user cancels any of the delete dialogs */
+        DELETE_HIERARCHY_CANCEL_ANALYTICS_EVENT: 'confluence.page.hierarchy.delete.cancel',
+        /* When a user does not have read permission on a page to be deleted */
+        DELETE_VALIDATION_INVALID_TARGET_ANALYTICS_EVENT: 'delete.page.hierarchy.dialog.invalid.target',
+        /* When the user does not have delete permission on a page to be deleted */
+        DELETE_VALIDATION_NO_DELETE_PAGE_PERMISSION_ANALYTICS_EVENT: 'delete.page.hierarchy.validation.noDeletePagePermission',
+        /* When the user does not have space level permissions */
+        DELETE_VALIDATION_INVALID_DELETE_HIERARCHY_ANALYTICS_EVENT: 'delete.page.hierarchy.dialog.invalid.deleteHierarchy',
+        /* When the user tries to delete more than the maximum number of pages that can be deleted */
+        DELETE_VALIDATION_MAX_PAGES_EXCEEDED_ANALYTICS_EVENT: 'delete.page.hierarchy.validation.maxPagesExceeded',
+        /************************************* COPY ****************************************/
+        /* When the flow is started. ie. Copy button clicked */
+        COPY_HIERARCHY_START_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.start',
+        /* When the user chooses to copy the page immediately without selecting children */
+        COPY_PAGE_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.single.page',
+        /* When the users advances from the location dialog to the preview dialog */
+        COPY_HIERARCHY_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.hierarchy',
+        /* When the user clicks submit on the preview dialog */
+        COPY_HIERARCHY_SUBMIT_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.hierarchy.submit',
+        /* When the user presses back from the preview dialog to return to the location dialog */
+        COPY_HIERARCHY_BACK_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.hierarchy.back',
+        /* When the user chooses to review errors */
+        COPY_HIERARCHY_VIEW_ERROR_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.view.errors',
+        /* If a space lock is hit the user has the option to choose a new location for their copy */
+        COPY_HIERARCHY_CHOOSE_NEW_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.choose.new.location',
+        /* When copy is done, but flow isn't yet finished (maybe have to review the errors still */
+        COPY_HIERARCHY_DONE_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.done',
+        /* When entire flow is finished */
+        COPY_HIERARCHY_FINISHED_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.finished',
+        /* When a new space is selected */
+        COPY_NEW_SPACE_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.new.space.selected',
+        /* When the user doesn't have permission to copy pages to the space they selected */
+        COPY_NEW_SPACE_NO_PERMISSION_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.new.space.no.permission',
+        /* When the user doesn't have permission to copy pages to the space they started with (the current space) */
+        COPY_EXISTING_SPACE_NO_PERMISSION_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.existing.space.no.permission',
+        /* When a new page is selected */
+        COPY_NEW_PAGE_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.new.page.selected',
+        /* If validation fails */
+        COPY_VALIDATION_FAILED_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.validation.failed',
+        /* When some page titles are too long */
+        COPY_VALIDATION_TITLE_LENGTH_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.validation.title.length',
+        /* When some page titles conflict in the destination space */
+        COPY_VALIDATION_TITLE_CONFLICT_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.validation.title.conflict',
+        /* When copying too many pages */
+        COPY_VALIDATION_PAGE_LIMIT_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.validation.page.limit',
+        /* When the destination page is somehow invalid. Maybe the page got deleted? */
+        COPY_VALIDATION_INVALID_DESTINATION_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.validation.invalid.destination',
+        /* When the origin page is somehow invalid. */
+        COPY_VALIDATION_INVALID_ORIGIN_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.validation.invalid.origin',
+        /* When the user doesn't have permission in the target space to create pages */
+        COPY_VALIDATION_CREATE_PAGE_PERMISSION_ANALYTICS_EVENT: 'confluence.page.hierarchy.copy.validation.create.page.permission',
+        /* When the user clicks the "View copied pages" link after the copy is finished */
+        COPY_VIEW_COPIED_PAGES: 'confluence.page.hierarchy.copy.view.copied.pages',
+        /* When the user closes the success/error flag */
+        COPY_CLOSE_FLAG: 'confluence.page.hierarchy.copy.close.flag',
+        /* When the user sees the success flag */
+        COPY_FLAG_SUCCESS: 'confluence.page.hierarchy.copy.flag.success',
+        /* When the user sees the error flag and no pages were copied */
+        COPY_FLAG_ERROR_ALL_PAGES: 'confluence.page.hierarchy.copy.flag.error.all.pages',
+        /* When the user sees the error flag because someone else is already copying pages to the space */
+        COPY_FLAG_ERROR_LOCK: 'confluence.page.hierarchy.copy.flag.error.lock',
+        /* When the user sees the warning flag because the pages were copied but the links failed to be updated */
+        COPY_FLAG_WARNING_RELINKING_PAGES: 'confluence.page.hierarchy.copy.flag.warning.links',
+        /* When the user sees the warning flag because some pages weren't copied */
+        COPY_FLAG_WARNING_SOME_PAGES_FAILED: 'confluence.page.hierarchy.copy.flag.warning.some.pages.failed',
+        /* When the user sees the warning flag because some pages weren't copied and links failed to be updated */
+        COPY_FLAG_WARNING_SOME_PAGES_FAILED_RELINKING_PAGES: 'confluence.page.hierarchy.copy.flag.warning.some.pages.failed.and.links',
+        /* When children in the preview are expanded */
+        PREVIEW_EXPAND_CHILDREN: 'confluence.page.hierarchy.preview.children.expand',
+        /* When children in the preview are collapsed */
+        PREVIEW_COLLAPSE_CHILDREN: 'confluence.page.hierarchy.preview.children.collapse'
+    };
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:util', location = '/js/util/get-error-pages.js' */
+define('confluence/page-hierarchy/util/get-error-pages', [], function () {
+    /**
+     * Get the page titles, ids, and urls from the list of errors we have
+     * @param {object} state The state object that contains the errors
+     * @param {string} errorName The name of the error that we are looking for
+     * @returns {Array} of Pages from the errors
+     * @private
+     */
+    return function getErrorPages(state, errorName) {
+        var errors = state.getErrors();
+        var pages = [];
+
+        for (var i = 0; i < errors.length; i++) {
+            var error = errors[i];
+            var args = error.args;
+            if (error.key === errorName && args && args.length) {
+                pages.push({title: args[0], id: args[1], url: args[2]}); // original page name
+            }
+        }
+
+        return pages;
+    }
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:util', location = '/js/util/loading-indicator.js' */
+define('confluence/page-hierarchy/util/loading-indicator', [
+    'ajs'
+], function (AJS) {
+
+    /**
+     * Loading indicator utility that displays a spinner and optional message within the specified parameters
+     * @param {jQuery} $context Parent DOM element that is the current context of this loadingIndicator.
+     * @param {string} spinnerSelector A jQuery selector for a spinner in this context
+     * @param {string} messageSelector A jQuery selector for an element where a message might be displayed in this
+     *                                  context
+     * @constructor
+     */
+    function LoadingIndicator($context, spinnerSelector, messageSelector) {
+        this.$messageBox = messageSelector && $context.find(messageSelector);
+        this.$spinner = spinnerSelector && $context.find(spinnerSelector);
+        this.count = 0;
+    }
+
+    /**
+     * Set the loading state of this indicator to 'loading'
+     * @param {string} message Optional message to display
+     * @returns {undefined}
+     */
+    LoadingIndicator.prototype.loading = function (message) {
+        this.count++;
+        this.$spinner && this.$spinner.spin();
+        if (message) {
+            this.$messageBox && this.$messageBox.html(AJS.escapeEntities(message));
+        }
+    };
+
+    /**
+     * Resets the loading state of this indicator to 'not loading'
+     * It takes into account how many times the indicator loading() method
+     * has been called, and only resets itself if all the loading events have finished.
+     * @param {function} callback If given, will be execute if we are truly finished loading
+     * @returns {undefined}
+     */
+    LoadingIndicator.prototype.done = function (callback) {
+        if (--this.count <= 0) {
+            this.count = 0;
+            this.$messageBox && this.$messageBox.empty();
+            this.$spinner && this.$spinner.spinStop();
+            if (callback && typeof callback === 'function') {
+                callback();
+            }
+        }
+    };
+
+    return LoadingIndicator;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:util', location = '/js/util/is-error-type.js' */
+define('confluence/page-hierarchy/util/is-error-type', [], function () {
+    /**
+     * Determines if we have encountered a certain type of error.
+     * Because of the structure of the errors we are expecting, it makes certain assumptions.
+     * If it finds the error in the list, it is deemed to be that kind of error, based on the possible
+     * error states we get back from the server.
+     *
+     * A list of errors might be simultaneously any reasonable combination of the errors checked in the
+     * usages of this method, and it is up to the caller to determine what to do with that information.
+     *
+     * @param {Array} errors Array of errors we have
+     * @param {string} type @see usages
+     * @returns {boolean} true iff it encounters {@link type} in the array
+     * @see usages
+     * @private
+     */
+    return function isErrorType(errors, type) {
+        for (var i = 0; i < errors.length; i++) {
+            if (errors[i].key === type) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:util', location = '/js/util/execute-if-function.js' */
+define('confluence/page-hierarchy/util/execute-if-function', [], function () {
+    /**
+     * If the supplied parameter is a function, it runs it with the remaining arguments passed
+     * to the function itself.
+     * @param {function} func The function to run if it is defined.
+     * @returns {undefined}
+     */
+    return function executeIfFunction(func) {
+        if (func && typeof func === 'function') {
+            func.apply(undefined, Array.prototype.slice.call(arguments, 1));
+        }
+    }
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:util', location = '/js/util/validation-error.js' */
+define('confluence/page-hierarchy/util/validation-error', [
+    'ajs',
+    'confluence/page-hierarchy/util/analytics-event'
+], function (AJS,
+             analyticsEvent) {
+
+    var PREVIEW_SELECTOR = '#preview';
+
+    /**
+     * Remove any errors lurking in the dialog
+     * @param {object} dialog the delete page dialog
+     * @returns {undefined}
+     * @private
+     */
+    function removeError(dialog) {
+        dialog.$element.find("#validation-error").remove();
+    }
+
+    /**
+     * Fail callback runs when the request to submit the task fails.
+     * @param {object} errorResponse Error response from the server.
+     * @param {string} analyticsErrorEvent the type of analytics error
+     * @param {object} dialog the delete page dialog
+     * @param {object} errorMessages static array of error messages
+     * @returns {undefined}
+     */
+    function fail(errorResponse, analyticsErrorEvent, dialog, errorMessages) {
+        analyticsEvent.publish(analyticsErrorEvent);
+        var messages = [];
+        dialog.loadingIndicator.done();
+
+        switch(errorResponse.status) {
+            case 401:
+                messages.push({body: errorMessages["unauthorized"]});
+                break;
+            case 400:
+            case 403:
+                messages = messages.concat(_buildErrors(errorResponse.responseText, errorMessages));
+                break;
+            case 404:
+                messages.push({body: errorMessages["notfound"]});
+                break;
+            case 405:
+                var responseJson = JSON.parse(errorResponse.responseText);
+                if (responseJson.reason === "READ_ONLY") {
+                    messages.push({body: errorMessages["readonly"]});
+                } else {
+                    messages.push({body: errorMessages["description"]});
+                }
+                break;
+            default:
+                messages.push({body: errorMessages["description"]});
+                break;
+        }
+
+        if (messages.length === 0) {
+            messages.push({body: errorMessages["description"]});
+        }
+        for (var i in messages) {
+            if (messages.hasOwnProperty(i)) {
+                _setError(messages[i].title, messages[i].body, dialog.$element.selector);
+            }
+        }
+
+        dialog.$element.find(PREVIEW_SELECTOR).scrollTop(0);
+    }
+
+    /**
+     * Get the errors coming back from the validation result and format them for display
+     * @param {string} responseText Response text from the server.
+     * @param {object} errorMessages the error messages from the server
+     * @returns {Array} The array of errors
+     * @private
+     */
+    function _buildErrors(responseText, errorMessages) {
+        var messages = [];
+        var response;
+        try {
+            response = JSON.parse(responseText);
+        } catch (e) {
+            AJS.log(e);
+        }
+        if (response && response.data && response.data.errors && response.data.errors.length) {
+            for (var index = 0; index < response.data.errors.length; index++) {
+                messages.push(_formatErrorFromRest(response.data.errors[index], errorMessages));
+            }
+        }
+
+        return messages;
+    }
+
+    /**
+     * Figures out what to put in the title and body of the error if the operation fails to validate
+     * @param {object} error An individual error from the list coming from the server
+     * @param {object} errorMessages the error messages
+     * @returns {{title: string, body: string}} The error for displaying in the aui message element
+     * @private
+     */
+    function _formatErrorFromRest(error, errorMessages) {
+        var title = errorMessages["title"];
+        var body;
+
+        switch (error.message.key) {
+            case 'delete.page.hierarchy.dialog.invalid.target':
+                body = "\u041d\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u0446\u0435\u043b\u0435\u0432\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430.";
+                analyticsEvent.publish(analyticsEvent.DELETE_VALIDATION_INVALID_TARGET_ANALYTICS_EVENT);
+                break;
+            case 'delete.page.hierarchy.validation.noDeletePagePermission':
+                body = "delete.page.hierarchy.dialog.noDeletePagePermission";
+                analyticsEvent.publish(analyticsEvent.DELETE_VALIDATION_NO_DELETE_PAGE_PERMISSION_ANALYTICS_EVENT);
+                break;
+            case 'delete.page.hierarchy.dialog.invalid.deleteHierarchy':
+                body = "delete.page.hierarchy.dialog.deleteHierarchy";
+                analyticsEvent.publish(analyticsEvent.DELETE_VALIDATION_INVALID_DELETE_HIERARCHY_ANALYTICS_EVENT);
+                break;
+            case 'delete.page.hierarchy.validation.maxPagesExceeded':
+                body = "\u0412\u044b \u043f\u044b\u0442\u0430\u0435\u0442\u0435\u0441\u044c \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u0441\u043b\u0438\u0448\u043a\u043e\u043c \u043c\u043d\u043e\u0433\u043e \u0441\u0442\u0440\u0430\u043d\u0438\u0446. \u041c\u044b \u043c\u043e\u0436\u0435\u043c \u0443\u0434\u0430\u043b\u044f\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e {0} \u0441\u0442\u0440. \u0437\u0430 \u0440\u0430\u0437.";
+                analyticsEvent.publish(analyticsEvent.DELETE_VALIDATION_MAX_PAGES_EXCEEDED_ANALYTICS_EVENT);
+                break;
+            default:
+                body = "\u0427\u0442\u043e-\u0442\u043e \u043f\u043e\u0448\u043b\u043e \u043d\u0435 \u0442\u0430\u043a.";
+        }
+
+        return {title: title, body: body};
+    }
+
+    /**
+     * Display the error.
+     * @param {string} errorTitle   Title
+     * @param {string} errorBody    Body
+     * @param {string} dialogCssSelector The css selector to element inside delete dialog
+     * @returns {undefined}
+     * @private
+     */
+    function _setError(errorTitle, errorBody, dialogCssSelector) {
+        var props = {
+            id: "validation-error",
+            insert: "prepend",
+            closeable: false
+        };
+        if (errorTitle) {
+            props.title = errorTitle;
+        }
+        if (errorBody) {
+            props.body = errorBody;
+        }
+        AJS.messages.error(dialogCssSelector + " .validation-error-parent", props);
+    }
+
+    return {
+        fail: fail,
+        removeError: removeError
+    };
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:transformer', location = '/js/transformer/children-transformer.js' */
+define('confluence/page-hierarchy/transformer/children-transformer',
+    [],
+    function () {
+        /**
+         * This transformer takes the results of a rest call to the children API and
+         * converts it into a format for use inside this plugin.
+         * @param {object} rest The original rest response
+         * @returns {object} The transformed output
+         */
+        return function transformChildren(rest) {
+            var next = rest._links.next;
+            return {
+                hasNext: !!next,
+                next: next,
+                results: rest.results
+            };
+        }
+    });
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-space-permissions.js' */
+define('confluence/page-hierarchy/fetch/fetch-space-permissions', [
+    'ajs'
+], function (AJS) {
+    var ENDPOINT = '/rest/page-hierarchy/internal/spacePermissions/<spaceKey>';
+
+    /**
+     * Returns an object representing the space permissions that the currently-logged-in user
+     * does and does not have.
+     * ie. {
+     *     pages: true, // can add pages
+     *     restrictions: false, // cannot add restrictions
+     *     sysAdmin: false, // is not a sys admin
+     * }
+     * @param {string} spaceKey Space Key to check
+     * @returns {jQuery.Deferred} with the results
+     */
+    function fetchSpacePermissions(spaceKey) {
+        var deferred = AJS.$.Deferred();
+
+        AJS.$.ajax({
+            url: AJS.contextPath() + ENDPOINT.replace('<spaceKey>', spaceKey)
+        }).done(function (data) {
+            deferred.resolve(data);
+        }).fail(function () {
+            deferred.reject();
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchSpacePermissions;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-children.js' */
+define('confluence/page-hierarchy/fetch/fetch-children', [
+    'ajs',
+    'confluence/page-hierarchy/transformer/children-transformer'
+], function (AJS,
+             transformChildren) {
+    var ENDPOINT = '/rest/api/content/<pageId>/child/page?expand=children.page&limit=200';
+
+    var cache = {};
+
+    /**
+     * Fetch the children of a piece of content. It also expands the children of the children,
+     * so they can be analyzed at the same time. This is useful for the page tree preview.
+     * @param {number} pageId The parent page id
+     * @returns {jQuery.Deferred} with the results
+     */
+    function fetchChildren(pageId) {
+        var deferred = AJS.$.Deferred();
+        if (cache[pageId]) {
+            return cache[pageId].promise();
+        }
+        cache[pageId] = deferred;
+        AJS.$.ajax({
+            url: AJS.contextPath() + ENDPOINT.replace('<pageId>', pageId),
+            success: function (data) {
+                deferred.resolve(transformChildren(data));
+            }, error: function () {
+                deferred.reject();
+            }
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchChildren;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-children-with-incoming-links.js' */
+define('confluence/page-hierarchy/fetch/fetch-children-with-incoming-links', [
+    'ajs',
+    'confluence/page-hierarchy/transformer/children-transformer'
+], function (AJS,
+             transformChildren) {
+    var ENDPOINT = '/rest/page-hierarchy/incoming/count'
+        + '?rootContentId=<rootContentId>&parentContentId=<parentContentId>&start=0&limit=200';
+
+    /**
+     * Fetch the children of a piece of content with additional incoming links information.
+     * Incoming links that originate from within the same hierarchy are excluded.
+     * The root page of the hierarchy needs to be passed in in order to know which links need
+     * to be excluded.
+     * @param {number|string} parentContentId The parent page id
+     * @param {number|string} rootContentId The id of the root page in the hierarchy
+     * @returns {jQuery.Deferred} with the results
+     */
+    function fetchChildren(parentContentId, rootContentId) {
+        var deferred = AJS.$.Deferred();
+        AJS.$.ajax({
+            url: AJS.contextPath() + ENDPOINT.replace('<rootContentId>', rootContentId)
+                .replace('<parentContentId>', parentContentId),
+            success: function (data) {
+                deferred.resolve(transformChildren(data));
+            }, error: function () {
+                deferred.reject();
+            }
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchChildren;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-page-info.js' */
+define('confluence/page-hierarchy/fetch/fetch-page-info', [
+    'ajs'
+], function (AJS) {
+    var ENDPOINT = '/rest/api/content/<pageId>';
+
+    var OLDER_VERSION_ENDPOINT = '/rest/api/content/<pageId>?version=<olderVersionId>&status=current';
+
+    /**
+     * Fetches the details of a page from REST
+     * @param {number} pageId The page id
+     * @param {number} latestPageId the latest page id
+     * @returns {jQuery.Deferred} with the results
+     */
+    function fetchPageInfo(pageId, latestPageId) {
+        var deferred = AJS.$.Deferred();
+        var olderPageVersion = AJS.Meta.get('page-version');
+        var actualPageId = pageId;
+
+        if (latestPageId && (latestPageId !== pageId)) {
+            ENDPOINT = OLDER_VERSION_ENDPOINT;
+            actualPageId = latestPageId;
+        }
+
+        AJS.$.ajax({
+            url: AJS.contextPath() + ENDPOINT.replace('<pageId>', actualPageId).replace('<olderVersionId>', olderPageVersion)
+        }).done(function (data) {
+            deferred.resolve(data);
+        }).fail(function (data) {
+            deferred.reject(data);
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchPageInfo;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-content-restrictions.js' */
+define('confluence/page-hierarchy/fetch/fetch-content-restrictions', [
+    'ajs'
+], function (AJS) {
+    var ENDPOINT = '/rest/api/content/<contentId>/restriction/byOperation';
+    var $ = AJS.$;
+
+    /**
+     * Gets the restrictions for a piece of content by ID
+     * @param {number} contentId The content Id
+     * @returns {jQuery.Deferred} with the results from the rest call
+     */
+    function fetchContentRestrictions(contentId) {
+        var deferred = $.Deferred();
+
+        AJS.$.ajax({
+            url: AJS.contextPath() + ENDPOINT.replace('<contentId>', contentId)
+        }).done(function (data) {
+            deferred.resolve(data);
+        }).fail(function (data) {
+            deferred.reject(data);
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchContentRestrictions;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-homepage.js' */
+define('confluence/page-hierarchy/fetch/fetch-homepage', [
+    'ajs'
+], function (AJS) {
+    var ENDPOINT = '/rest/api/space/<spaceKey>?expand=homepage';
+
+    /**
+     * Fetch the home page for a space from REST
+     * @param {string} spaceKey The space key
+     * @returns {jQuery.Deferred} with the result
+     */
+    function fetchHomepage(spaceKey) {
+        var deferred = AJS.$.Deferred();
+        AJS.$.ajax({
+            url: AJS.contextPath() + ENDPOINT.replace('<spaceKey>', spaceKey),
+            success: function (data) {
+                deferred.resolve(data.homepage);
+            }, error: function () {
+                deferred.reject();
+            }
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchHomepage;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-incoming-link-count.js' */
+define('confluence/page-hierarchy/fetch/fetch-incoming-link-count', [
+    'ajs'
+], function (AJS) {
+    var ENDPOINT = '/rest/page-hierarchy/internal/incomingLinkCount/<pageId>';
+
+    /**
+     * Gets the real count of incoming links for a page. Does not exclude any links.
+     * @param {number|string} pageId The Page Id to get the links for
+     * @returns {jQuery.Deferred} with the count as the result.
+     */
+    function fetchIncomingLinkCount(pageId) {
+        var deferred = AJS.$.Deferred();
+        AJS.$.ajax({
+            url: AJS.contextPath() + ENDPOINT.replace('<pageId>', pageId),
+            success: function (data) {
+                deferred.resolve(data.count);
+            }, error: function () {
+                deferred.reject();
+            }
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchIncomingLinkCount;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:fetch', location = '/js/fetch/fetch-subtree-count.js' */
+define('confluence/page-hierarchy/fetch/fetch-subtree-count', [
+    'ajs'
+], function (AJS) {
+    var ENDPOINT = '/rest/page-hierarchy/internal/subtreeCount/<pageId>';
+
+    /**
+     * Gets the number of descendants and restricted descendants in the tree useful
+     * for telling the user how many pages will be deleted and how many pages will be left behind.
+     * @param {number|string} pageId The Page Id to get the links for
+     * @param {boolean} totalCountOnly Optional: if true, will return just the total count, and not the restricted
+     *                                              count or the count of pages with incoming links.
+     * @returns {jQuery.Deferred} with the counts as the result.
+     */
+    function fetchSubtreeCount(pageId, totalCountOnly) {
+        var deferred = AJS.$.Deferred();
+        var url = AJS.contextPath() + ENDPOINT.replace('<pageId>', pageId);
+        if (totalCountOnly) {
+            url += '?totalCountOnly=true';
+        }
+        AJS.$.ajax({
+            url: url,
+            success: function (data) {
+                deferred.resolve(data);
+            }, error: function () {
+                deferred.reject();
+            }
+        });
+
+        return deferred.promise();
+    }
+
+    return fetchSubtreeCount;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:service', location = '/js/service/data-service.js' */
+define('confluence/page-hierarchy/service/data-service', [
+    'ajs'
+], function (AJS) {
+    /**
+     * This service is responsible for maintaining promise objects for various bits of data for a flow.
+     * Once the flow is started, requests can be added to a clean data-service. They remain here for the lifecycle
+     * of the flow, and any new requests can be added to it, but getting an existing request means that multiple
+     * requests for the same piece of data do not trigger multiple Ajax requests, and promises can be added even
+     * before they are requested by the user, so that bits of data can begin to be preloaded.
+     */
+
+    var requests = {};
+
+    /**
+     * Get an existing request, or add the request if it doesn't exist.
+     * @param {string} key Key for the request
+     * @param {jQuery.Deferred} promise Optional: Promise object.
+     * @returns {jQuery.Deferred} The promise object
+     */
+    function get(key, promise) {
+        if (!requests[key]) {
+            if (!promise) {
+                AJS.error('A request with key \'' + key + '\' does not exist, and one was not provided. ' +
+                    'Returning a failed promise.');
+                return AJS.$.Deferred().reject();
+            }
+            requests[key] = promise;
+        }
+        return requests[key];
+    }
+
+    /**
+     * Clear the request cache
+     * @returns {undefined}
+     */
+    function reset() {
+        _abortAnyAjaxRequests();
+        requests = {};
+    }
+
+    /**
+     * Aborts any requests that have an abort method
+     * @returns {undefined}
+     * @private
+     */
+    function _abortAnyAjaxRequests() {
+        for (var key in requests) {
+            if (requests.hasOwnProperty(key) && typeof requests[key].abort === 'function') {
+                requests[key].abort();
+            }
+        }
+    }
+
+    return {
+        get: get,
+        reset: reset,
+        SUBTREE_COUNT_TOTAL_ONLY_DATA_KEY: 'subtree-count-total-only',
+        SUBTREE_COUNT_DATA_KEY: 'subtree-count',
+        INCOMING_LINKS_DATA_KEY: 'incoming-links',
+        RESTRICTIONS_DATA_KEY: 'restrictions',
+        SPACE_PERMISSIONS_DATA_KEY: 'space-permissions',
+        ROOT_INCOMING_LINKS_COUNT_DATA_KEY: 'root-incoming-links'
+    }
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:service', location = '/js/service/delete-navigator.js' */
+define('confluence/page-hierarchy/service/delete-navigator', [
+    'ajs',
+    'confluence/page-hierarchy/fetch/fetch-page-info'
+], function (AJS,
+             fetchPageInfo) {
+    var PAGES_PATH = '/collector/pages.action?key=<spaceKey>';
+    var PARENT_PATH = '/pages/viewpage.action?pageId=<pageId>';
+
+    /**
+     * Create the url to follow with the additional hash information
+     * @param {string} url Original URL
+     * @param {string} taskId The Long Running Task Id
+     * @returns {string} The URL with the hash parameters
+     * @private
+     */
+    function _createPath(url, taskId) {
+        var currentTitle = AJS.Meta.get('page-title');
+        return url + '#delete-complete&' + taskId + '&' + encodeURIComponent(currentTitle);
+    }
+
+    /**
+     * Navigates to the pages collector page with the hash parameters
+     * @param {string} taskId The Long Running Task Id
+     * @returns {undefined}
+     * @private
+     */
+    function _navigateToPages(taskId) {
+        var spaceKey = AJS.Meta.get('space-key');
+        var url = AJS.contextPath() + PAGES_PATH.replace('<spaceKey>', spaceKey);
+        window.location = _createPath(url, taskId);
+    }
+
+    /**
+     * Navigates to the parent of this page. If there is no parent then it navigates
+     * to the pages collector page. In both cases it adds additional information to the url
+     * @param {string} taskId The Long Running Task Id
+     * @returns {undefined}
+     */
+    function navigateToParent(taskId) {
+        var parentPageId = AJS.Meta.get('parent-page-id');
+        if (!parentPageId) {
+            return _navigateToPages(taskId);
+        }
+        fetchPageInfo(parentPageId).done(function () {
+            var url = AJS.contextPath() + PARENT_PATH.replace('<pageId>', parentPageId);
+            window.location = _createPath(url, taskId);
+        }).fail(function () {
+            _navigateToPages(taskId);
+        });
+    }
+
+    return {
+        navigateToParent: navigateToParent
+    }
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:service', location = '/js/service/delete-service.js' */
+define('confluence/page-hierarchy/service/delete-service', [
+    'ajs',
+    'confluence/page-hierarchy/state/delete-state',
+    'confluence/page-hierarchy/action/delete-page-hierarchy-action',
+    'confluence/page-hierarchy/util/execute-if-function',
+    'confluence/page-hierarchy/util/analytics-event',
+    'confluence/page-hierarchy/util/validation-error'
+], function (AJS,
+             state,
+             deletePageHierarchyAction,
+             executeIfFunction,
+             analyticsEvent,
+             validationError) {
+
+    var TASK_ID_KEY = 'taskId';
+
+    /**
+     * A service that manages the delete action.
+     * @param {object} options Options. See usage for which options are available.
+     * @returns {undefined}
+     * @constructor
+     */
+    var DeleteService = function (options) {
+        this.loadingIndicator = options.loadingIndicator;
+        this.beforeSubmit = options.beforeSubmit;
+        this.dialog = options.dialog;
+    };
+
+    /**
+     * Submit the request to copy page hierarchy.
+     * @returns {object} The promise object returned by the copyPageHierarchyAction.
+     * @private
+     */
+    DeleteService.prototype.submit = function () {
+        this.loadingIndicator.loading();
+        executeIfFunction(this.beforeSubmit);
+        state.clearErrors();
+        return deletePageHierarchyAction(state.getOptions())
+            .done(this.success.bind(this))
+            .fail(this.fail.bind(this));
+    };
+
+    /**
+     * Success callback runs when the task is successfully submitted.
+     * @param {object} data  Data retrieved from the server. Contains the taskId.
+     * @returns {undefined}
+     * @private
+     */
+    DeleteService.prototype.success = function (data) {
+        var taskId = data[TASK_ID_KEY];
+        this.loadingIndicator.done();
+        state.setTaskId(taskId);
+        AJS.trigger(state.DELETE_HIERARCHY_SUBMIT_EVENT);
+    };
+
+    /**
+     * Fail callback runs when the request to submit the task fails.
+     * @param {object} errorResponse Error response from the server.
+     * @returns {undefined}
+     * @private
+     */
+    DeleteService.prototype.fail = function (errorResponse) {
+        validationError.fail(errorResponse, analyticsEvent.DELETE_HIERARCHY_ERROR_EVENT, this.dialog, state.ERROR_MESSAGES);
+    };
+
+    return DeleteService;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:service', location = '/js/service/dialog-service.js' */
+define('confluence/page-hierarchy/service/dialog-service', [
+    'ajs',
+    'confluence/legacy',
+    'confluence/page-hierarchy/util/loading-indicator',
+    'confluence/page-hierarchy/util/execute-if-function'
+], function (AJS,
+             Confluence,
+             LoadingIndicator,
+             executeIfFunction) {
+    var HINT_SELECTOR = '#hint';
+    var SPINNER_SELECTOR = '.button-spinner';
+    // Stores our dialog references
+    var dialogs = {};
+
+    /**
+     * Bind function that adds show method to a dialog
+     * @param {string} name        unique name of the dialog
+     * @param {object} options     options trickling down from get method
+     * @returns {function} See usage
+     * @private
+     */
+    function _show(name, options) {
+        return function () {
+            _ensureElement(name, options);
+            var $element = dialogs[name].$element;
+            var show = function () {
+                dialogs[name].showTime = new Date().getTime();
+                AJS.dialog2(_selector(name, options)).show();
+            };
+            if (options.showDelay) {
+                dialogs[name].showDelay = setTimeout(function () {
+                    show();
+                }, options.showDelay);
+            } else {
+                show();
+            }
+
+            // Show method needs to be delayed because otherwise it will run before the init method which is not good.
+            setTimeout(function () {
+                executeIfFunction(options.onShow, $element);
+            }, 0);
+        };
+    }
+
+    /**
+     * Bind function that adds hide method to a dialog
+     * @param {string} name        unique name of the dialog
+     * @param {object} options     options trickling down from get method
+     * @returns {function} See usage
+     * @private
+     */
+    function _hide(name, options) {
+        return function () {
+            if (!dialogs[name]) {
+                return;
+            }
+            var $element = dialogs[name].$element;
+            if (dialogs[name].showDelay) {
+                clearTimeout(dialogs[name].showDelay);
+            } else {
+                var hide = function () {
+                    if ($element && $element.is(':visible')) {
+                        AJS.dialog2(_selector(name, options)).hide();
+                    }
+                };
+                _minimumShowDuration(name, options.minimumShowDuration || 0, hide);
+            }
+
+            executeIfFunction(options.onHide, $element);
+        }
+    }
+
+    /**
+     * Bind function that adds remove method to a dialog
+     * @param {string} name        unique name of the dialog
+     * @param {object} options     options trickling down from get method
+     * @returns {function} See usage
+     * @private
+     */
+    function _remove(name, options) {
+        return function () {
+            if (!dialogs[name]) {
+                return;
+            }
+            var $element = dialogs[name].$element;
+            if ($element) {
+                if (dialogs[name].showDelay) {
+                    clearTimeout(dialogs[name].showDelay);
+                }
+                var remove = function () {
+                    executeIfFunction(options.onRemove, $element);
+                    AJS.dialog2(_selector(name, options)).remove();
+                };
+                _minimumShowDuration(name, options.minimumShowDuration || 0, remove);
+            }
+            dialogs[name].$element = undefined;
+        }
+    }
+
+    /**
+     * Bind function that adds async method to a dialog to bundle the loadingIndicator
+     * and hide those details from the dialog itself.
+     * @param {string} name        unique name of the dialog
+     * @returns {function} See usage
+     * @private
+     */
+    function _async(name) {
+        return function () {
+            var message = '';
+            if (typeof arguments[0] === 'string') {
+                message = arguments[0];
+            }
+            dialogs[name].loadingIndicator.loading(message);
+            var remainingArguments = message
+                ? Array.prototype.slice.call(arguments, 1)
+                : arguments;
+            return AJS.$.when.apply(this, remainingArguments).then(function () {
+                dialogs[name].loadingIndicator.done();
+                return AJS.$.Deferred().resolve.apply(this, arguments);
+            });
+        }
+    }
+
+    /**
+     * Function that determines if the dialog has been open for a minimum amount of
+     * time before closing or removing it.
+     * @param {string}   name       Name of the dialog
+     * @param {number}   minimumShowDuration    In ms, the minimum amount of time this dialog
+     *                                          should be displayed
+     * @param {function} callback   Hide or remove function to run after the duration
+     *                              is reached.
+     * @returns {undefined}
+     * @private
+     */
+    function _minimumShowDuration(name, minimumShowDuration, callback) {
+        var now = new Date().getTime();
+        var showDuration = now - dialogs[name].showTime;
+        if (showDuration < minimumShowDuration) {
+            setTimeout(function () {
+                executeIfFunction(callback);
+            }, minimumShowDuration - showDuration);
+        } else {
+            executeIfFunction(callback);
+        }
+    }
+
+    /**
+     * Processes the given template parameters and finds any functions an executes them before returning the value.
+     * Functions allows us to evaluate parameters at runtime while define them at the time the dialog module is created.
+     * @param {object} params The options.templateParameters given to this dialog
+     * @returns {object} The processed parameters with any functions applied
+     * @private
+     */
+    function _processParameters(params) {
+        var parameters = {};
+        for (var key in params) {
+            if (params.hasOwnProperty(key)) {
+                parameters[key] = _processParameter(params[key]);
+            }
+        }
+        return parameters;
+    }
+
+    /**
+     * Processes an individual parameter to see if it needs to be executed if it is a function
+     * @param {function|*} param Either a function or a plain value
+     * @returns {*} the result of processing the parameter
+     * @private
+     */
+    function _processParameter(param) {
+        if (typeof param === 'function') {
+            return param();
+        }
+
+        return param;
+    }
+
+    /**
+     * Determine what selector to use for the dialog. If a selector option is passed, it will use that. Otherwise,
+     * it will use the name of the dialog as the id of the $element
+     * @param {string} name        unique name of the dialog
+     * @param {object} options     options trickling down from the get method
+     * @returns {string} The css selector for the dialog
+     * @private
+     */
+    function _selector(name, options) {
+        return options.selector || '#' + name;
+    }
+
+    /**
+     * Ensures the element exists in the DOM. Creates it if it doesn't exist. Updates the dialog with the
+     * element to make sure it is available, and runs init function.
+     * @param {string} name        unique name of the dialog
+     * @param {object} options     options trickling down from get method
+     * @returns {undefined}
+     * @private
+     */
+    function _ensureElement(name, options) {
+        if (!dialogs[name].$element) {
+            var parameters = _processParameters(options.templateParameters || {});
+            var $jQueryDialog = _ensureDialog(_selector(name, options), options.templateName, parameters);
+            var loadingIndicator = new LoadingIndicator($jQueryDialog, SPINNER_SELECTOR, HINT_SELECTOR);
+
+            dialogs[name].$element = $jQueryDialog;
+            dialogs[name].loadingIndicator = loadingIndicator;
+
+            // Allow the dialog to return a reference to it before executing the init function
+            // This makes it so we don't have to pass around a reference to the dialog in the init function
+            setTimeout(function () {
+                executeIfFunction(options.onInit, $jQueryDialog);
+            }, 0);
+        }
+    }
+
+    /**
+     * Ensures that a dialog exists. Otherwise creates the dialog with the specified options
+     * @param {string} dialogSelector The jQuery Selector for the dialog in question
+     * @param {string} templateName Soy Template Name within the Confluence.Templates.PageHierarchy namespace
+     * @param {object} parameters Parameters to pass to the Soy Template
+     * @returns {jQuery} the $jQueryDialog reference to this dialog
+     */
+    function _ensureDialog(dialogSelector, templateName, parameters) {
+        var $jQueryDialog = AJS.$(dialogSelector);
+        if ($jQueryDialog.length) {
+            return $jQueryDialog;
+        }
+        AJS.$('body').append(Confluence.Templates.PageHierarchy[templateName](parameters));
+        $jQueryDialog = AJS.$(dialogSelector);
+        return $jQueryDialog;
+    }
+
+    /**
+     * Returns the dialog object for the given name and ensures that the dialog $element exists in the DOM
+     * @param {string} name        unique name of the dialog
+     * @param {object} options     options for this dialog
+     *      Options:
+     *          selector: a specific CSS selector to use instead of the name
+     *          templateName: The Soy Template name to use to render the dialog
+     *          templateParameters: Parameters to pass to the Soy Template
+     *          onInit: init function to run when the dialog is created in the dom.
+     *                  It receives the jQuery element as its only parameter
+     *          onShow: function to run when the dialog is shown
+     *                  It receives the jQuery element as its only parameter
+     *          onHide: function to run when the dialog is hidden
+     *                  It receives the jQuery element as its only parameter
+     *          onRemove: function to run when the dialog is removed
+     *                  It receives the jQuery element as its only parameter
+     *          showDelay: in ms, the time to wait before actually showing the dialog.
+     *                  The dialog onShow function will still run when show is triggered
+     *                  on the dialog, but it won't be visible until the delay has passed.
+     *                  If the dialog is hidden before the delay time is reached, it
+     *                  won't be shown at all. This allows to skip certain dialogs if
+     *                  they appear and disappear quickly, without skipping their functionality.
+     *                  It creates a nicer visual experience.
+     *          minimumShowDuration: in ms, the minimum amount of time that dialog should be
+     *                  shown before it is hidden again. If a hide or remove is triggered on
+     *                  the dialog before it has reached its minimumShowDuration, the hide or
+     *                  remove will be delayed.
+     *
+     *          Note that you do not need to use the jQuery element parameter in your
+     *              init/show/hide/destroy functions, but it is provided as a convenience.
+     *              See usage.
+     * @returns {object} The dialog
+     */
+    function get(name, options) {
+        if (dialogs[name]) {
+            return dialogs[name];
+        }
+
+        var dialog = {
+            selector: _selector(name, options),
+            show: _show(name, options),
+            hide: _hide(name, options),
+            remove: _remove(name, options),
+            async: _async(name)
+        };
+
+        dialogs[name] = dialog;
+
+        return dialog;
+    }
+
+    return {
+        get: get
+    }
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:service', location = '/js/service/page-tree.js' */
+define('confluence/page-hierarchy/service/page-tree', [
+    'ajs',
+    'confluence/legacy',
+    'confluence/page-hierarchy/fetch/fetch-children',
+    'confluence/page-hierarchy/fetch/fetch-children-with-incoming-links',
+    'confluence/page-hierarchy/util/analytics-event',
+    'confluence/page-hierarchy/util/execute-if-function'
+], function (AJS,
+             Confluence,
+             fetchChildren,
+             fetchChildrenWithIncomingLinks,
+             analyticsEvent,
+             executeIfFunction) {
+    /**
+     * Page Tree service that can display a page tree in the preview for Copy and Delete Hierarchy
+     * @param {object} options Options. See usage for which options are available.
+     * @returns {undefined}
+     * @constructor
+     */
+    var PageTree = function (options) {
+        this.loadingIndicator = options.loadingIndicator;
+        this.onExpand = options.onExpand;
+        this.incomingLinks = options.incomingLinks;
+        this.restrictEditPages = options.restrictEditPages;
+        this.rootContentId = options.rootContentId;
+    };
+
+    /**
+     * Main method that loads a page tree into the root $childrenElement
+     * @param {number} pageId Id of the parent page
+     * @param {jQuery} $childrenElement jQuery Dom Element housing the children for the parent page
+     * @returns {undefined}
+     */
+    PageTree.prototype.load = function (pageId, $childrenElement) {
+        this.getChildren(pageId, $childrenElement);
+        $childrenElement.on('click.get-children', this.childrenClickHandler.bind(this));
+    };
+
+    /**
+     * Fetch children from the server and display in the page tree
+     * @param {number} pageId   The page Id of the page to get children for.
+     * @param {jQuery} $childrenContainer    The jQuery container for the children
+     * @returns {undefined}
+     * @private
+     */
+    PageTree.prototype.getChildren = function (pageId, $childrenContainer) {
+        var that = this;
+        var fetch = that.incomingLinks
+            ? fetchChildrenWithIncomingLinks
+            : fetchChildren;
+        that.loadingIndicator.loading();
+        fetch(pageId, that.rootContentId).done(function (data) {
+            var children = data.results;
+            that.loadingIndicator.done();
+            $childrenContainer.data('is-fetched', true);
+            $childrenContainer.html(Confluence.Templates.PageHierarchy.children({
+                hasNext: data.hasNext,
+                incomingLinks: that.incomingLinks,
+                restrictEditPages: that.restrictEditPages,
+                children: children
+            }));
+            that.expandChildren($childrenContainer);
+        });
+    };
+
+    /**
+     * Expands children in the preview
+     * @param {jQuery} $childrenContainer The jQuery objet containing the children.
+     * @returns {undefined}
+     * @private
+     */
+    PageTree.prototype.expandChildren = function ($childrenContainer) {
+        $childrenContainer.slideDown('fast');
+        $childrenContainer.closest('.child').addClass('is-expanded');
+        executeIfFunction(this.onExpand, $childrenContainer);
+        analyticsEvent.publish(analyticsEvent.PREVIEW_EXPAND_CHILDREN);
+    };
+
+    /**
+     * Collapses Children in the preview
+     * @param {jQuery} $childrenContainer The jQuery objet containing the children.
+     * @returns {undefined}
+     * @private
+     */
+    PageTree.prototype.collapseChildren = function ($childrenContainer) {
+        $childrenContainer.slideUp('fast');
+        $childrenContainer.closest('.child').removeClass('is-expanded');
+        analyticsEvent.publish(analyticsEvent.PREVIEW_COLLAPSE_CHILDREN);
+    };
+
+    /**
+     * Handles click event on the preview page tree to expand or collapse children
+     * @param {object} event The DOM click event.
+     * @returns {undefined}
+     * @private
+     */
+    PageTree.prototype.childrenClickHandler = function (event) {
+        var that = this;
+        var $target = $(event.target);
+        var $parent = $target.closest('.child');
+        if ($target.hasClass('indicator') && $parent.length && $parent.hasClass('has-children')) {
+            var $childrenContainer = $parent.children('.children').first();
+            if ($parent.hasClass('is-expanded')) {
+                return that.collapseChildren($childrenContainer);
+            }
+            if ($childrenContainer.data('is-fetched')) {
+                return that.expandChildren($childrenContainer);
+            }
+            that.getChildren($parent.data('page-id'), $childrenContainer);
+        }
+    };
+
+    return PageTree;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:service', location = '/js/service/progress-runner.js' */
+define('confluence/page-hierarchy/service/progress-runner', [
+        'ajs',
+        'confluence/page-hierarchy/util/execute-if-function'
+    ],
+    function (AJS,
+              executeIfFunction) {
+        var LONG_TASK_REST_ENDPOINT = '/rest/api/longtask/<taskId>';
+        var REGULAR_PROGRESS_POLL_INTERVAL = 1000;
+        var QUICK_PROGRESS_POLL_INTERVAL = 172;
+        var PROGRESS_INDICATOR_SELECTOR = '#progress-indicator';
+        var STATUS_SELECTOR = '#status';
+        var WARNING_TYPE = 'WARN';
+        var $ = AJS.$;
+
+        /**
+         * A Progress Runner service that queries the Long Running Task API for the status of
+         * a copy or delete operation.
+         * @param {object} options Options. See usage for which options are available.
+         * @constructor
+         */
+        var Runner = function (options) {
+            this.state = options.state;
+            this.$dialog = options.dialog;
+            this.onStatus = options.onStatus;
+            this.defaultMessages = options.defaultMessages;
+            this.onProgress = options.onProgress;
+            this.onComplete = options.onComplete;
+            this.ERROR_UNKNOWN = options.ERROR_UNKNOWN;
+        };
+
+        /**
+         * Updates the status of the progress dialog
+         * @param {{key:string,args:Array}} status Status reported by LongRunningTask
+         * @returns {undefined}
+         * @private
+         */
+        Runner.prototype.updateDisplayStatus = function (status) {
+            var $status = this.$dialog.find(STATUS_SELECTOR);
+            $status.html(AJS.escapeEntities(this.onStatus(status)));
+        };
+
+        /**
+         * Main method that polls for progress updates.
+         * @returns {undefined}
+         */
+        Runner.prototype.run = function () {
+            var that = this;
+            var timeout;
+            var timesPolled = 0;
+            AJS.progressBars.update(PROGRESS_INDICATOR_SELECTOR, 0);
+            var process = function () {
+                $.ajax({
+                    url: AJS.contextPath() + LONG_TASK_REST_ENDPOINT.replace('<taskId>', that.state.getState().taskId)
+                }).done(function (data) {
+                    var messages = _getMessages(data, that.defaultMessages);
+                    that.updateDisplayStatus(messages.status);
+                    executeIfFunction(that.onProgress, messages);
+
+                    if (!data.successful) {
+                        clearTimeout(timeout);
+                        return that.errorResult(messages);
+                    }
+
+                    AJS.progressBars.update(PROGRESS_INDICATOR_SELECTOR, data.percentageComplete / 100);
+
+                    if (+data.percentageComplete >= 100) {
+                        clearTimeout(timeout);
+                        if (data.successful) {
+                            that.successResult(messages);
+                        } else {
+                            that.errorResult(messages);
+                        }
+
+                        return;
+                    }
+
+                    updateStatusPoller();
+                }).fail(function () {
+                    clearTimeout(timeout);
+                    that.errorResult();
+                });
+            };
+            var updateStatusPoller = function () {
+                timeout = setTimeout(process,
+                    timesPolled++ < 5 ? QUICK_PROGRESS_POLL_INTERVAL : REGULAR_PROGRESS_POLL_INTERVAL);
+            };
+            process();
+        };
+
+        /**
+         * Trigger the success result, and set any errors
+         * @param {object} messages {@see #_getMessages}
+         * @returns {undefined}
+         * @private
+         */
+        Runner.prototype.successResult = function (messages) {
+            AJS.progressBars.update(PROGRESS_INDICATOR_SELECTOR, 1);
+            // Even a successful result could still contain some problems with some
+            // of the pages but it is not a total error
+            if (messages && messages.errors && messages.errors.length) {
+                this.sortAndSetErrors(messages.errors);
+            }
+
+            executeIfFunction(this.onComplete);
+        };
+
+        /**
+         * Sort the errors into warnings and errors and update the state
+         * @param {Array} restErrors Array of errors/warnings coming from the server
+         * @returns {undefined}
+         * @private
+         */
+        Runner.prototype.sortAndSetErrors = function (restErrors) {
+            var sorted = this.sortErrors(restErrors);
+            this.state.setErrors(sorted.errors);
+            this.state.setWarnings(sorted.warnings);
+        };
+
+        /**
+         * Sort between errors and warnings
+         * @param {Array} restErrors Array of errors/warnings coming from the server
+         * @returns {{errors: Array, warnings: Array}} Object containing errors in one array, warnings in another
+         * @private
+         */
+        Runner.prototype.sortErrors = function (restErrors) {
+            var errors = [];
+            var warnings = [];
+            for (var i = 0; i < restErrors.length; i++) {
+                var error = restErrors[i];
+                if (error.type === WARNING_TYPE) {
+                    warnings.push(error);
+                } else {
+                    errors.push(error);
+                }
+            }
+
+            return {errors: errors, warnings: warnings};
+        };
+
+        /**
+         * Trigger the error result, and set the errors
+         * @param {object} messages {@see #_getMessages}
+         * @returns {undefined}
+         * @private
+         */
+        Runner.prototype.errorResult = function (messages) {
+            var state = this.state;
+
+            AJS.progressBars.setIndeterminate(PROGRESS_INDICATOR_SELECTOR);
+            if (messages && messages.errors && messages.errors.length) {
+                this.sortAndSetErrors(messages.errors);
+            } else {
+                state.setErrors([{key: this.ERROR_UNKNOWN}]);
+            }
+
+            executeIfFunction(this.onComplete);
+        };
+
+        /**
+         * Parses the messages from the status field of the long running task if any exist
+         * @param {object} data  LongRunningTaskResult
+         * @param {function} defaultMessages Default messages if parsing fails
+         * @returns {{status:object,errors:object}} Messages from the server
+         * @private
+         */
+        function _getMessages(data, defaultMessages) {
+            if (data.messages && data.messages.length) {
+                try {
+                    return JSON.parse(data.messages[data.messages.length - 1].translation);
+                } catch (e) {
+                    return defaultMessages();
+                }
+            }
+
+            return defaultMessages();
+        }
+
+        return Runner;
+    });
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:common-soy', location = '/soy/common-templates.soy' */
+// This file was automatically generated from common-templates.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace Confluence.Templates.PageHierarchy.
+ */
+
+if (typeof Confluence == 'undefined') { var Confluence = {}; }
+if (typeof Confluence.Templates == 'undefined') { Confluence.Templates = {}; }
+if (typeof Confluence.Templates.PageHierarchy == 'undefined') { Confluence.Templates.PageHierarchy = {}; }
+
+
+Confluence.Templates.PageHierarchy.children = function(opt_data, opt_ignored) {
+  var output = '<ul>';
+  var childList4 = opt_data.children;
+  var childListLen4 = childList4.length;
+  for (var childIndex4 = 0; childIndex4 < childListLen4; childIndex4++) {
+    var childData4 = childList4[childIndex4];
+    output += '<li class="child ' + soy.$$escapeHtml(childData4.children.page.results.length ? ' has-children' : '') + soy.$$escapeHtml(opt_data.restrictEditPages && ! childData4.metadata.editPermission ? ' edit-restricted' : '') + '" data-page-id="' + soy.$$escapeHtml(childData4.id) + '"><div class="indicator"></div><div class="title" data-title="' + soy.$$escapeHtml(childData4.title) + '">' + soy.$$escapeHtml(childData4.title) + ((opt_data.incomingLinks) ? Confluence.Templates.PageHierarchy.previewIncomingLinks({pageId: childData4.id, linkCount: childData4.metadata.incomingCount}) : '') + '</div><div class="children" style="display:none;"></div></li>';
+  }
+  output += ((opt_data.hasNext) ? '<li class="child more">(' + soy.$$escapeHtml('\u0414\u0440\u0443\u0433\u0438\u0435 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0437\u0434\u0435\u0441\u044c \u043d\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u043d\u044b.') + ')</li>' : '') + '<ul>';
+  return output;
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.children.soyTemplateName = 'Confluence.Templates.PageHierarchy.children';
+}
+
+
+Confluence.Templates.PageHierarchy.previewIncomingLinks = function(opt_data, opt_ignored) {
+  return '' + ((opt_data.linkCount > 0) ? '<span class="incoming-links"><a target="_blank" href="' + soy.$$escapeHtml("" + '/pages/viewinfo.action?pageId=' + opt_data.pageId) + '">' + ((opt_data.linkCount == 1) ? soy.$$escapeHtml(AJS.format('({0} \u0441\u0441\u044b\u043b\u043a\u0430)',opt_data.linkCount)) : soy.$$escapeHtml(AJS.format('(\u0441\u0441\u044b\u043b\u043e\u043a: {0})',opt_data.linkCount))) + '</a></span>' : '');
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.previewIncomingLinks.soyTemplateName = 'Confluence.Templates.PageHierarchy.previewIncomingLinks';
+}
+
+
+Confluence.Templates.PageHierarchy.progressDialog = function(opt_data, opt_ignored) {
+  return '<section role="dialog" id="page-hierarchy-progress-dialog" class="aui-layer aui-dialog2 aui-dialog2-small" aria-hidden="true" persistent><header class="aui-dialog2-header"><h2 class="aui-dialog2-header-main">' + ((opt_data.type == 'copy') ? soy.$$escapeHtml('\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b') : soy.$$escapeHtml('\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b')) + '</h2></header><div class="aui-dialog2-content"><p id="status">' + soy.$$escapeHtml('\u0420\u0430\u0431\u043e\u0442\u0430\u0435\u043c...') + '</p><div id="progress-indicator" class="aui-progress-indicator"><span class="aui-progress-indicator-value"></span></div></div></section>';
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.progressDialog.soyTemplateName = 'Confluence.Templates.PageHierarchy.progressDialog';
+}
+
+
+Confluence.Templates.PageHierarchy.errorDialog = function(opt_data, opt_ignored) {
+  var output = '<section role="dialog" id="page-hierarchy-error-dialog" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true" persistent><header class="aui-dialog2-header"><h2 class="aui-dialog2-header-main">' + ((opt_data.type == 'copy') ? soy.$$escapeHtml('\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0441 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438') : soy.$$escapeHtml('\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0441 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438')) + '</h2><!-- Close icon --><a id="close" class="aui-dialog2-header-close"><span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span></a></header><div class="aui-dialog2-content"><p>' + ((opt_data.type == 'copy') ? soy.$$escapeHtml('\u042d\u0442\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b (\u0438 \u0432\u0441\u0435 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b) \u043d\u0435 \u0431\u044b\u043b\u0438 \u0441\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u044b. \u0412\u0435\u0440\u043e\u044f\u0442\u043d\u043e, \u044d\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u043e \u0438\u0437-\u0437\u0430 \u043a\u043e\u043d\u0444\u043b\u0438\u043a\u0442\u0430 \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f.') : soy.$$escapeHtml('\u042d\u0442\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b (\u0438 \u0432\u0441\u0435 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b) \u043d\u0435 \u0431\u044b\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d\u044b. \u0412\u0435\u0440\u043e\u044f\u0442\u043d\u043e, \u044d\u0442\u043e \u043f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u043e \u0438\u0437-\u0437\u0430 \u0441\u043c\u0435\u043d\u044b \u043f\u0440\u0430\u0432 \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430.')) + '</p><p><ul>';
+  var pageList63 = opt_data.pages;
+  var pageListLen63 = pageList63.length;
+  for (var pageIndex63 = 0; pageIndex63 < pageListLen63; pageIndex63++) {
+    var pageData63 = pageList63[pageIndex63];
+    output += '<li>' + ((pageData63.url) ? '<a href="' + soy.$$escapeHtml(pageData63.url) + '" target="_blank">' + soy.$$escapeHtml(pageData63.title) + '</a>' : soy.$$escapeHtml(pageData63.title)) + '</li>';
+  }
+  output += '</ul></p></div></section>';
+  return output;
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.errorDialog.soyTemplateName = 'Confluence.Templates.PageHierarchy.errorDialog';
+}
+
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-soy', location = '/soy/delete-templates.soy' */
+// This file was automatically generated from delete-templates.soy.
+// Please don't edit this file by hand.
+
+/**
+ * @fileoverview Templates in namespace Confluence.Templates.PageHierarchy.
+ */
+
+if (typeof Confluence == 'undefined') { var Confluence = {}; }
+if (typeof Confluence.Templates == 'undefined') { Confluence.Templates = {}; }
+if (typeof Confluence.Templates.PageHierarchy == 'undefined') { Confluence.Templates.PageHierarchy = {}; }
+
+
+Confluence.Templates.PageHierarchy.deleteDialog = function(opt_data, opt_ignored) {
+  var output = '<section role="dialog" id="delete-page-dialog" class="page-hierarchy-dialog aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true" persistent><header class="aui-dialog2-header"><h2 class="aui-dialog2-header-main">' + soy.$$escapeHtml('\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443') + '</h2></header><div class="aui-dialog2-content validation-error-parent"><p>';
+  var escapedPageTitle__soy6 = '' + soy.$$escapeHtml(opt_data.pageTitle);
+  output += soy.$$filterNoAutoescape(AJS.format('\u0412\u044b \u0445\u043e\u0442\u0438\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \x3cb\x3e{0}\x3c/b\x3e.',escapedPageTitle__soy6)) + '<span id="variable-description"></span></p><p id="restricted-page"></p><p id="incoming-links"></p><form action="#" method="post" class="aui" style="margin-top:20px;"><div class="custom-field-group" style="float:left;"><input type="checkbox" class="checkbox" name="includeChildren" id="delete-hierarchy" disabled><label for="delete-hierarchy">' + soy.$$escapeHtml('\u0422\u0430\u043a\u0436\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b') + '</label></div><span id="children-warning"></span></form></div><footer class="aui-dialog2-footer"><div class="aui-dialog2-footer-actions"><div class="aui-dialog2-footer-hint" id="hint"></div><div class="button-spinner"></div><button id="delete-dialog-next" class="aui-button aui-button-primary">' + soy.$$escapeHtml('\u0423\u0434\u0430\u043b\u0438\u0442\u044c') + '</button><button id="delete-dialog-close" class="aui-button aui-button-link">' + soy.$$escapeHtml('\u041e\u0442\u043c\u0435\u043d\u0430') + '</button></div></footer></section>';
+  return output;
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.deleteDialog.soyTemplateName = 'Confluence.Templates.PageHierarchy.deleteDialog';
+}
+
+
+Confluence.Templates.PageHierarchy.deleteHierarchyDialog = function(opt_data, opt_ignored) {
+  var output = '<section role="dialog" id="delete-hierarchy-dialog" class="page-hierarchy-dialog aui-layer aui-dialog2 aui-dialog2-large" aria-hidden="true" persistent><header class="aui-dialog2-header"><h2 class="aui-dialog2-header-main">' + soy.$$escapeHtml('\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b') + '</h2></header><div class="aui-dialog2-content validation-error-parent"><div class="inline-message inline-warning bottom-margin"><span class="aui-icon aui-icon-small aui-iconfont-warning">Warning</span><div id="description">';
+  var escapedPageTitle__soy22 = '' + soy.$$escapeHtml(opt_data.currentPageTitle);
+  output += soy.$$filterNoAutoescape(AJS.format('\u0412\u044b \u0445\u043e\u0442\u0438\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \x3cb\x3e{0}\x3c/b\x3e.',escapedPageTitle__soy22)) + '</div></div><div id="preview"><div class="preview_main no-parent"><div id="currentPage"><div class="indicator"></div><span class="title" title="' + soy.$$escapeHtml(opt_data.currentPageTitle) + '">' + soy.$$escapeHtml(opt_data.currentPageTitle) + '</span></div><div id="children" class="is-expanded"><div class="preview-spinner"></div></div></div></div></div><footer class="aui-dialog2-footer"><div class="aui-dialog2-footer-actions"><div class="aui-dialog2-footer-hint" id="hint"></div><div class="button-spinner"></div><button id="delete-hierarchy-back" class="aui-button">' + soy.$$escapeHtml('\u041d\u0430\u0437\u0430\u0434') + '</button><button id="delete-hierarchy-submit" class="aui-button aui-button-primary">' + soy.$$escapeHtml('\u0423\u0434\u0430\u043b\u0438\u0442\u044c') + '</button><button id="delete-hierarchy-close" class="aui-button aui-button-link">' + soy.$$escapeHtml('\u041e\u0442\u043c\u0435\u043d\u0430') + '</button></div></footer></section>';
+  return output;
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.deleteHierarchyDialog.soyTemplateName = 'Confluence.Templates.PageHierarchy.deleteHierarchyDialog';
+}
+
+
+Confluence.Templates.PageHierarchy.deleteFlag = function(opt_data, opt_ignored) {
+  return '<p>' + ((opt_data.body) ? soy.$$escapeHtml(opt_data.body) : '') + '</p><ul class="aui-nav-actions-list">' + ((opt_data.showErrors) ? '<li><a href="#" id="see-errors">' + soy.$$escapeHtml('\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0441 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438') + '</a></li>' : '') + '</ul>';
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.deleteFlag.soyTemplateName = 'Confluence.Templates.PageHierarchy.deleteFlag';
+}
+
+
+Confluence.Templates.PageHierarchy.incomingLinks = function(opt_data, opt_ignored) {
+  return '<div class="inline-message inline-warning"><span class="aui-icon aui-icon-small aui-iconfont-warning">Warning</span><div>' + ((opt_data.numIncomingLinks == 1) ? soy.$$filterNoAutoescape(AJS.format('\u041d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0435\u0441\u0442\u044c {0}{1} \u0432\u0445\u043e\u0434\u044f\u0449\u0430\u044f \u0441\u0441\u044b\u043b\u043a\u0430{2}, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0435\u0440\u0435\u0441\u0442\u0430\u043d\u0435\u0442 \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c, \u0435\u0441\u043b\u0438 \u0432\u044b \u0443\u0434\u0430\u043b\u0438\u0442\u0435 \u044d\u0442\u0443 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443.','<a id="incoming-links-link" target="_blank" href="' + opt_data.linkUrl + '">',opt_data.numIncomingLinks,'</a>')) : soy.$$filterNoAutoescape(AJS.format('\u041d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0435\u0441\u0442\u044c {0}{1} \u0432\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0441\u0441\u044b\u043b\u043e\u043a{2}, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u043f\u0435\u0440\u0435\u0441\u0442\u0430\u043d\u0443\u0442 \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c, \u0435\u0441\u043b\u0438 \u0432\u044b \u0443\u0434\u0430\u043b\u0438\u0442\u0435 \u044d\u0442\u0443 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443.','<a id="incoming-links-link" target="_blank" href="' + opt_data.linkUrl + '">',opt_data.numIncomingLinks,'</a>'))) + '</div></div>';
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.incomingLinks.soyTemplateName = 'Confluence.Templates.PageHierarchy.incomingLinks';
+}
+
+
+Confluence.Templates.PageHierarchy.restrictedPage = function(opt_data, opt_ignored) {
+  return '<div class="inline-message inline-error"><span class="aui-icon aui-icon-small aui-iconfont-error">Error</span><div>' + ((opt_data.numChildrenLeftBehind == 1) ? soy.$$escapeHtml('\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430, \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u0432\u044b \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0435\u0441\u044c \u0443\u0434\u0430\u043b\u0438\u0442\u044c, \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u0430, \u0438 \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043c\u043e\u0433\u0443\u0442 \u0441\u0442\u0430\u0442\u044c \u0432\u0438\u0434\u0438\u043c\u044b\u043c\u0438 \u0434\u0440\u0443\u0433\u0438\u043c \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430\u043c.') : soy.$$escapeHtml('\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432\u044b \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u0442\u0435\u0441\u044c \u0443\u0434\u0430\u043b\u0438\u0442\u044c, \u0437\u0430\u0449\u0438\u0449\u0435\u043d\u044b, \u0438 \u043f\u043e\u044d\u0442\u043e\u043c\u0443 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043c\u043e\u0433\u0443\u0442 \u0441\u0442\u0430\u0442\u044c \u0432\u0438\u0434\u0438\u043c\u044b\u043c\u0438 \u0434\u0440\u0443\u0433\u0438\u043c \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430\u043c.')) + '</div></div>';
+};
+if (goog.DEBUG) {
+  Confluence.Templates.PageHierarchy.restrictedPage.soyTemplateName = 'Confluence.Templates.PageHierarchy.restrictedPage';
+}
+
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/state/delete-state.js' */
+/**
+ * This is the source of truth.
+ */
+define('confluence/page-hierarchy/state/delete-state',
+    [
+        'ajs'
+    ], function (AJS) {
+        var DEFAULT_DELETE_HIERARCHY = false;
+        // Triggered when the process is completely done and the user is done review any errors
+        var FINISHED_EVENT = "page-hierarchy-plugin:delete-finished";
+        // Triggered when the user clicks next after selecting to delete children
+        var DELETE_HIERARCHY_EVENT = "page-hierarchy-plugin:delete-hierarchy";
+        // Triggered when the user submits the delete hierarchy operation
+        var DELETE_HIERARCHY_SUBMIT_EVENT = "page-hierarchy-plugin:delete-hierarchy-submit";
+        // Triggered when the user hits back from the preview dialog
+        var DELETE_HIERARCHY_BACK_EVENT = "page-hierarchy-plugin:delete-hierarchy-back";
+        // Done the process but maybe there are errors, as opposed to FINISHED_EVENT
+        var DELETE_HIERARCHY_DONE_EVENT = "page-hierarchy-plugin:delete-hierarchy-done";
+        // Triggered when the user chooses to review the delete page errors
+        var DELETE_HIERARCHY_VIEW_ERROR_EVENT = "page-hierarchy-plugin:delete-view-errors-event";
+        // Triggered when the user chooses cancel on any dialog
+        var DELETE_HIERARCHY_CANCEL_EVENT = "page-hierarchy-plugin:delete-cancel";
+        // Triggered the delete cannot start because there is an error
+        var DELETE_HIERARCHY_ERROR_EVENT = "page-hierarchy-plugin:delete-error";
+
+        var ERROR_MESSAGES = {
+            'notfound': "\u041d\u0443\u0436\u043d\u0443\u044e \u0432\u0430\u0441 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043d\u0430\u0439\u0442\u0438 \u043d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c.",
+            'title': "\u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0438",
+            'description': "\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u0432\u0430\u0448\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b. \u041f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0443 \u0435\u0449\u0435 \u0440\u0430\u0437.",
+            'title-some': "\u041d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043d\u0435 \u0431\u044b\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d\u044b.",
+            'unauthorized': "\u0423 \u0432\u0430\u0441 \u043d\u0435\u0442 \u043f\u0440\u0430\u0432 \u043d\u0430 \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b.",
+            'view-failed': "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0441 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438",
+            'readonly': "\u042d\u0442\u043e\u0442 \u0441\u0430\u0439\u0442 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u0447\u0442\u0435\u043d\u0438\u044f \u0412\u043d\u043e\u0441\u0438\u0442\u044c \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0441\u0435\u0439\u0447\u0430\u0441 \u043d\u0435\u043b\u044c\u0437\u044f."
+        };
+
+        var options = {};
+        var state = {};
+        var errors = [];
+        var warnings = [];
+        var permissions = [];
+
+        reset();
+
+        function reset() {
+            options = {
+                deleteHierarchy: DEFAULT_DELETE_HIERARCHY,
+                targetPageId: AJS.Meta.get('page-id')
+            };
+            state = {
+                anyPagesDeleted: false,
+                taskId: '',
+                existingFlow: false,
+                originalPageTitle: AJS.Meta.get('page-title')
+            };
+            errors = [];
+            warnings = [];
+            permissions = [];
+        }
+
+        function getOptions() {
+            return options;
+        }
+
+        function getState() {
+            return state;
+        }
+
+        function getErrors() {
+            return errors;
+        }
+
+        function setErrors(err) {
+            errors = err;
+        }
+
+        function clearErrors() {
+            errors = [];
+            warnings = [];
+        }
+
+        function getWarnings() {
+            return warnings;
+        }
+
+        function setWarnings(warn) {
+            warnings = warn;
+        }
+
+        function getPermissions() {
+            return permissions;
+        }
+
+        function setPermissions(perms) {
+            permissions = perms;
+        }
+
+        function setDeleteHierarchy(value) {
+            options.deleteHierarchy = !!value;
+        }
+
+        function setTargetIds(ids) {
+            options.targetIds = ids;
+        }
+
+        function setTaskId(taskId) {
+            state.taskId = taskId;
+        }
+
+        function setExistingFlow(isExistingFlow) {
+            state.existingFlow = isExistingFlow;
+        }
+
+        function setOriginalPageTitle(originalPageTitle) {
+            state.originalPageTitle = originalPageTitle;
+        }
+
+        function setNumPagesDeleted(value) {
+            state.numPagesDeleted = value;
+        }
+
+        return {
+            FINISHED_EVENT: FINISHED_EVENT,
+            DELETE_HIERARCHY_EVENT: DELETE_HIERARCHY_EVENT,
+            DELETE_HIERARCHY_SUBMIT_EVENT: DELETE_HIERARCHY_SUBMIT_EVENT,
+            DELETE_HIERARCHY_BACK_EVENT: DELETE_HIERARCHY_BACK_EVENT,
+            DELETE_HIERARCHY_DONE_EVENT: DELETE_HIERARCHY_DONE_EVENT,
+            DELETE_HIERARCHY_VIEW_ERROR_EVENT: DELETE_HIERARCHY_VIEW_ERROR_EVENT,
+            DELETE_HIERARCHY_CANCEL_EVENT: DELETE_HIERARCHY_CANCEL_EVENT,
+            DELETE_HIERARCHY_ERROR_EVENT: DELETE_HIERARCHY_ERROR_EVENT,
+            ERROR_MESSAGES: ERROR_MESSAGES,
+            getOptions: getOptions,
+            getState: getState,
+            getErrors: getErrors,
+            setErrors: setErrors,
+            getWarnings: getWarnings,
+            setWarnings: setWarnings,
+            getPermissions: getPermissions,
+            setPermissions: setPermissions,
+            setDeleteHierarchy: setDeleteHierarchy,
+            setTargetIds : setTargetIds,
+            setOriginalPageTitle: setOriginalPageTitle,
+            setNumPagesDeleted: setNumPagesDeleted,
+            setTaskId: setTaskId,
+            setExistingFlow: setExistingFlow,
+            reset: reset,
+            clearErrors: clearErrors
+        };
+
+    });
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/action/delete-page-hierarchy-action.js' */
+define('confluence/page-hierarchy/action/delete-page-hierarchy-action', [
+    'ajs'
+], function (AJS) {
+    var ENDPOINT = '/rest/page-hierarchy/delete';
+    var $ = AJS.$;
+
+    /**
+     * Calls the rest end point to perform the delete action
+     * @param {object} params Parameters to pass to the endpoint
+     * {
+     *      "deleteHierarchy": true,
+     *      "targetPageId": 98798798
+     *  }
+     * @returns {jQuery.ajax} object from the request
+     */
+    function deleteAction(params) {
+        if (!_checkParams(params)) {
+            return $.Deferred().reject();
+        }
+        return _doDeleteAction(params);
+    }
+
+    function _doDeleteAction(params) {
+        return $.ajax({
+            type: 'POST',
+            url: AJS.contextPath() + ENDPOINT,
+            data: JSON.stringify($.extend(params, {atl_token: AJS.Meta.get('atl-token')})),
+            contentType: 'application/json',
+            dataType: 'json'
+        });
+    }
+
+    function _checkParams(params) {
+        return !!params;
+    }
+
+    return deleteAction;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/dialog/delete-error-dialog.js' */
+define('confluence/page-hierarchy/dialog/delete-error-dialog', [
+    'ajs',
+    'confluence/page-hierarchy/service/dialog-service',
+    'confluence/page-hierarchy/state/delete-state',
+    'confluence/page-hierarchy/util/get-error-pages'
+], function (AJS,
+             DialogService,
+             state,
+             getErrorPages) {
+    var NAME = 'delete-error-dialog';
+    var SELECTOR = '#page-hierarchy-error-dialog';
+    var CLOSE_SELECTOR = '#close';
+    var ERROR_DELETE_PAGE = 'ERROR_DELETE_PAGE';
+
+    var TEMPLATE_NAME = 'errorDialog';
+
+    var dialog = DialogService.get(NAME, {
+        selector: SELECTOR,
+        templateName: TEMPLATE_NAME,
+        templateParameters: {
+            pages: function () {
+                return getErrorPages(state, ERROR_DELETE_PAGE);
+            },
+            type: 'delete'
+        },
+        onShow: _run
+    });
+
+    /**
+     * Main method to setup the dialog
+     * @returns {undefined}
+     * @private
+     */
+    function _run() {
+        var $close = dialog.$element.find(CLOSE_SELECTOR);
+
+        $close.on('click', function () {
+            AJS.trigger(state.FINISHED_EVENT);
+        });
+    }
+
+    return dialog;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/dialog/delete-progress-dialog.js' */
+define('confluence/page-hierarchy/dialog/delete-progress-dialog', [
+    'ajs',
+    'confluence/legacy',
+    'confluence/page-hierarchy/service/delete-navigator',
+    'confluence/page-hierarchy/service/dialog-service',
+    'confluence/page-hierarchy/service/progress-runner',
+    'confluence/page-hierarchy/state/delete-state',
+    'confluence/page-hierarchy/util/analytics-event',
+    'confluence/page-hierarchy/util/get-error-pages',
+    'confluence/page-hierarchy/util/is-error-type'
+], function (AJS,
+             Confluence,
+             deleteNavigator,
+             DialogService,
+             ProgressRunner,
+             state,
+             analyticsEvent,
+             getErrorPages,
+             isErrorType) {
+    var NAME = 'delete-progress-dialog';
+    var SELECTOR = '#page-hierarchy-progress-dialog';
+    var SEE_ERRORS_SELECTOR = '#see-errors';
+    var TEMPLATE_NAME = 'progressDialog';
+    var STATUS_DELETING_PAGE = 'STATUS_DELETING_PAGE';
+    var STATUS_DELETING_PAGES = 'STATUS_DELETING_PAGES';
+    var STATUS_DELETED_PAGE = 'STATUS_DELETED_PAGE';
+    var STATUS_DELETED_PAGES = 'STATUS_DELETED_PAGES';
+    var STATUS_MOVE_PAGES = 'STATUS_MOVE_PAGES';
+    var STATUS_MOVING_PAGES = 'STATUS_MOVING_PAGES';
+    var ERROR_UNKNOWN = 'ERROR_UNKNOWN';
+    var ERROR_DELETE_PAGE = 'ERROR_DELETE_PAGE';
+
+    var $ = AJS.$;
+
+    var dialog = DialogService.get(NAME, {
+        selector: SELECTOR,
+        templateName: TEMPLATE_NAME,
+        templateParameters: {
+            type: 'delete'
+        },
+        onShow: _run,
+        showDelay: 600,
+        minimumShowDuration: 500
+    });
+
+    /**
+     * Main method that runs when the dialog is shown.
+     * @returns {undefined}
+     * @private
+     */
+    function _run() {
+        new ProgressRunner({
+            state: state,
+            dialog: dialog.$element,
+            onStatus: _getDisplayStatus,
+            onComplete: _onComplete,
+            defaultMessages: _defaultMessages,
+            ERROR_UNKNOWN: ERROR_UNKNOWN
+        }).run();
+    }
+
+    /**
+     * Function that runs when the progress is complete. It decides if
+     * we should navigate to the parent page or stay on the current page to display
+     * the relevant flag.
+     * @returns {undefined}
+     * @private
+     */
+    function _onComplete() {
+        var result = _determineResult();
+        if (result.existingFlow) {
+            return _triggerFlag(result);
+        }
+        var shouldNavigateToParent = result.type === 'success' || result.thisPageDeleted;
+        if (shouldNavigateToParent) {
+            deleteNavigator.navigateToParent(result.taskId);
+        } else {
+            _triggerFlag(result);
+        }
+    }
+
+    /**
+     * Determines the result of the delete process. It figures out if it was successful
+     * or not and prepares information for the flag, as well as some other information
+     * which is useful to determine what to do next.
+     * @returns {object} Details of the result
+     * @private
+     */
+    function _determineResult() {
+        var errors = state.getErrors() || [];
+        var numPagesDeleted = state.getState().numPagesDeleted;
+        var taskId = state.getState().taskId;
+        var existingFlow = state.getState().existingFlow;
+        var unexpectedError = _isUnexpectedError(errors);
+        var hasDeletePageErrors = _hasDeletePageErrors(errors);
+        var thisPageDeleted = _thisPageDeleted(state);
+        var errorTitle = "\u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0438";
+        var somePagesWereNotDeletedTitle = "\u041d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u043d\u0435 \u0431\u044b\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d\u044b.";
+        var type;
+        var title;
+        var body;
+
+        if (errors.length) {
+            if (numPagesDeleted > 0) {
+                type = 'warning';
+                if (thisPageDeleted) {
+                    title = AJS.format("{0} \u0443\u0434\u0430\u043b\u0435\u043d\u0430, \u043d\u043e \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0438\u0437 \u0435\u0435 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u0441\u0442\u0440\u0430\u043d\u0438\u0446 \u043d\u0435 \u0431\u044b\u043b\u0438 \u0443\u0434\u0430\u043b\u0435\u043d\u044b.",
+                        state.getState().originalPageTitle);
+                } else {
+                    title = somePagesWereNotDeletedTitle;
+                }
+
+                if (unexpectedError) {
+                    body = "\u0427\u0442\u043e-\u0442\u043e \u043f\u043e\u0448\u043b\u043e \u043d\u0435 \u0442\u0430\u043a.";
+                }
+                analyticsEvent.publish(analyticsEvent.DELETE_FLAG_WARNING_SOME_PAGES_FAILED);
+            } else {
+                type = 'error';
+                title = errorTitle;
+                body = "\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u0432\u0430\u0448\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b. \u041f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0443 \u0435\u0449\u0435 \u0440\u0430\u0437.";
+                analyticsEvent.publish(analyticsEvent.DELETE_FLAG_ERROR_ALL_PAGES);
+            }
+            // Done deleting but maybe not totally finished yet -> Have to review errors
+            AJS.trigger(state.DELETE_HIERARCHY_DONE_EVENT);
+        } else {
+            type = 'success';
+            title = numPagesDeleted > 1
+                ? AJS.format("\u0423\u0434\u0430\u043b\u0435\u043d\u043e {0} \u0441\u0442\u0440.", numPagesDeleted)
+                : "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0443\u0434\u0430\u043b\u0435\u043d\u0430";
+            body = numPagesDeleted > 1
+                ? "\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u044b \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430 \u043c\u043e\u0433\u0443\u0442 \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c \u044d\u0442\u0438 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0438\u0437 \u043a\u043e\u0440\u0437\u0438\u043d\u044b."
+                : "\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u044b \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430 \u043c\u043e\u0433\u0443\u0442 \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0438\u0437 \u043a\u043e\u0440\u0437\u0438\u043d\u044b.";
+
+            // Totally done.
+            AJS.trigger(state.FINISHED_EVENT);
+            analyticsEvent.publish(analyticsEvent.DELETE_FLAG_SUCCESS);
+        }
+        return {
+            type: type,
+            title: title,
+            body: body,
+            hasDeletePageErrors: hasDeletePageErrors,
+            thisPageDeleted: thisPageDeleted,
+            taskId: taskId,
+            existingFlow: existingFlow
+        }
+    }
+
+    /**
+     * Triggers an AUI flag to be displayed based on the current state of the copy operation
+     * @param {object} result The result of running _determineResult
+     * @returns {undefined}
+     * @private
+     */
+    function _triggerFlag(result) {
+        _updateFlagDisplay(AJS.flag({
+            type: result.type,
+            close: 'manual',
+            title: result.title,
+            body: Confluence.Templates.PageHierarchy.deleteFlag(
+                {
+                    body: result.body,
+                    showErrors: result.hasDeletePageErrors
+                })
+        }));
+    }
+
+    /**
+     * Updates the flag events
+     * @param {object} flag DOM element for the flag
+     * @returns {undefined}
+     * @private
+     */
+    function _updateFlagDisplay(flag) {
+        var $flag = $(flag);
+        // If we're finished the whole process.
+        var finished = true;
+        $flag.find(SEE_ERRORS_SELECTOR).click(function () {
+            finished = false;
+            flag.close();
+            AJS.trigger(state.DELETE_HIERARCHY_VIEW_ERROR_EVENT);
+        });
+        $flag.on('aui-flag-close', function () {
+            if (finished) {
+                AJS.trigger(state.FINISHED_EVENT);
+            }
+            analyticsEvent.publish(analyticsEvent.DELETE_CLOSE_FLAG);
+        });
+    }
+
+    /**
+     * Determines if an unexpected error occurred based on the errors we have reported.
+     * @param {Array} errors    Array of errors we have
+     * @returns {boolean} true iff it encounters ERROR_UNKNOWN in the array
+     * @private
+     */
+    function _isUnexpectedError(errors) {
+        return isErrorType(errors, ERROR_UNKNOWN);
+    }
+
+    /**
+     * Determines if we have some delete page errors based on the errors we have reported.
+     * @param {Array} errors    Array of errors we have
+     * @returns {boolean} true iff it encounters ERROR_DELETE_PAGE in the array
+     * @private
+     */
+    function _hasDeletePageErrors(errors) {
+        return isErrorType(errors, ERROR_DELETE_PAGE);
+    }
+
+    /**
+     * Checks to see if the current page has been deleted. If it has then
+     * we need to land on the parent page regardless of the rest of the results,
+     * but if it has not then we stay on the page.
+     *
+     * It scans through the pages that had errors to see if one of them is the current page.
+     * @param {object} state  The current delete state
+     * @returns {boolean} true if this page has been deleted, false otherwise.
+     * @private
+     */
+    function _thisPageDeleted(state) {
+        if (!state.getErrors().length) {
+            return true;
+        }
+        if (_isUnexpectedError(state.getErrors())) {
+            return false;
+        }
+        if (state.getState().numPagesDeleted === 0) {
+            return false;
+        }
+        var pageTitle = AJS.Meta.get('page-title');
+        var pages = getErrorPages(state, ERROR_DELETE_PAGE);
+
+        for (var i = 0; i < pages.length; i++) {
+            var page = pages[i];
+            if (page.title === pageTitle) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Returns the status to display in the progress dialog
+     * @param {object} status JSON object returning from the Long Running Task status string.
+     * @returns {string} The status to display in the dialog
+     * @private
+     */
+    function _getDisplayStatus(status) {
+        var numDeleted;
+        var numTotal;
+        if (status) {
+            switch (status.key) {
+                case STATUS_DELETED_PAGE:
+                case STATUS_DELETED_PAGES:
+                    numDeleted = status.args[0] || 0;
+                    state.setNumPagesDeleted(numDeleted);
+                    return "\u0417\u0430\u043a\u0430\u043d\u0447\u0438\u0432\u0430\u0435\u043c...";
+                case STATUS_MOVE_PAGES:
+                case STATUS_MOVING_PAGES:
+                    return "\u041f\u0435\u0440\u0435\u043c\u0435\u0449\u0430\u0435\u043c \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b...";
+                case STATUS_DELETING_PAGE:
+                case STATUS_DELETING_PAGES:
+                    numDeleted = status.args[0] || 0;
+                    numTotal = status.args[1] || 0;
+                    state.setNumPagesDeleted(numDeleted);
+                    return AJS.format("\u0423\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b {0} \u0438\u0437 {1}.", numDeleted, numTotal);
+                default:
+                    return "\u0423\u0434\u0430\u043b\u044f\u0435\u043c \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b...";
+            }
+        }
+    }
+
+    /**
+     * Default message to display if the long running task has not yet updated.
+     * @returns {{status: object, errors: Array}} A default response from the server if some kind of error
+     *                                              occurred
+     * @private
+     */
+    function _defaultMessages() {
+        return {
+            status: {
+                key: ''
+            },
+            errors: []
+        }
+    }
+
+    return dialog;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/dialog/delete-hierarchy-dialog.js' */
+/**
+ * Sets up the dialog with the options to copy a page with its children
+ * including any relevant options.
+ */
+define('confluence/page-hierarchy/dialog/delete-hierarchy-dialog', [
+    'ajs',
+    'confluence/legacy',
+    'confluence/page-hierarchy/action/delete-page-hierarchy-action',
+    'confluence/page-hierarchy/service/data-service',
+    'confluence/page-hierarchy/service/delete-service',
+    'confluence/page-hierarchy/service/dialog-service',
+    'confluence/page-hierarchy/service/page-tree',
+    'confluence/page-hierarchy/state/delete-state',
+    'confluence/page-hierarchy/util/validation-error'
+], function (AJS,
+             Confluence,
+             deletePageHierarchyAction,
+             DataService,
+             DeleteService,
+             DialogService,
+             PageTree,
+             state,
+             validationError
+) {
+    var NAME = 'delete-hierarchy-dialog';
+    var SUBMIT_BUTTON_SELECTOR = '#delete-hierarchy-submit';
+    var BACK_BUTTON_SELECTOR = '#delete-hierarchy-back';
+    var CLOSE_BUTTON_SELECTOR = '#delete-hierarchy-close';
+    var PREVIEW_CURRENT_PAGE_SELECTOR = '#currentPage';
+    var PREVIEW_SELECTOR = '#preview';
+    var PREVIEW_CHILDREN_SELECTOR = '#children';
+    var DESCRIPTION_SELECTOR = '#description';
+    var TEMPLATE_NAME = 'deleteHierarchyDialog';
+
+    var dialog = DialogService.get(NAME, {
+        templateName: TEMPLATE_NAME,
+        templateParameters: {
+            currentPageTitle: AJS.Meta.get('page-title')
+        },
+        onInit: _init
+    });
+
+
+
+    /**
+     * Init method runs when the dialog is created
+     * @returns {undefined}
+     * @private
+     */
+    function _init() {
+        _bindButtons();
+        _setupPreview();
+        _updateDescriptionOfWhatIsBeingDeleted();
+
+        var id = '#' + NAME;
+
+        AJS.dialog2(id).on('hide', function () {
+            validationError.removeError(dialog);
+        });
+
+        AJS.dialog2(id).on('show', function () {
+            _setupPreview();
+        });
+    }
+
+    /**
+     * Sets up the preview with the parent page and all the children.
+     * @returns {undefined}
+     * @private
+     */
+    function _setupPreview() {
+        var $preview = dialog.$element.find(PREVIEW_SELECTOR);
+        var $childrenElement = $preview.find(PREVIEW_CHILDREN_SELECTOR);
+        var pageId = AJS.Meta.get('page-id');
+
+        var pageTree = new PageTree({
+            loadingIndicator: dialog.loadingIndicator,
+            incomingLinks: true,
+            restrictEditPages: true,
+            rootContentId: state.getOptions().targetPageId
+        });
+        pageTree.load(pageId, $childrenElement);
+        _updateRootIncomingLinksCount();
+    }
+
+
+    /**
+     * Update the incoming links information for the root element in our tree
+     * @returns {undefined}
+     * @private
+     */
+    function _updateRootIncomingLinksCount() {
+        var pageId = state.getOptions().targetPageId;
+        var $parentPage = dialog.$element.find(PREVIEW_CURRENT_PAGE_SELECTOR);
+        var $parentPageTitle = $parentPage.find('.title').first();
+        dialog.async(DataService.get(DataService.ROOT_INCOMING_LINKS_COUNT_DATA_KEY)).done(function (children) {
+            var parentLinkCount = children.results[0].metadata.incomingCountForParent;
+            var $incomingLinkCountLink = $parentPageTitle.find(".incoming-links").first();
+            if ($incomingLinkCountLink.length) {
+                $incomingLinkCountLink.replaceWith(Confluence.Templates.PageHierarchy.previewIncomingLinks({
+                    pageId: pageId,
+                    linkCount: parentLinkCount
+                }));
+            } else {
+                $parentPageTitle.append(Confluence.Templates.PageHierarchy.previewIncomingLinks({
+                    pageId: pageId,
+                    linkCount: parentLinkCount
+                }));
+            }
+        });
+    }
+
+    /**
+     * Figures out how many pages are going to be deleted, and left behind, and how many
+     * pages have incoming links
+     * @returns {undefined}
+     * @private
+     */
+    function _updateDescriptionOfWhatIsBeingDeleted() {
+        var $description = dialog.$element.find(DESCRIPTION_SELECTOR);
+        var escapedPageTitle = AJS.escapeEntities(AJS.Meta.get('page-title'));
+
+        DataService.get(DataService.SUBTREE_COUNT_DATA_KEY).done(function (subtreeCount) {
+            // total count includes the parent page
+            var numDescendants = subtreeCount.totalCount - 1;
+            var numRestrictedDescendants = subtreeCount.restrictedCount;
+
+            var numToDelete = numDescendants - numRestrictedDescendants;
+            var description = '';
+
+            if (numToDelete === 1) {
+                description = AJS.format("\u0412\u044b \u0445\u043e\u0442\u0438\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u003cb\u003e{0}\u003c/b\u003e \u0438 \u0435\u0449\u0435 {1} \u0441\u0442\u0440.", escapedPageTitle, numToDelete);
+            } else {
+                description = AJS.format("\u0412\u044b \u0445\u043e\u0442\u0438\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u003cb\u003e{0}\u003c/b\u003e \u0438 \u0435\u0449\u0435 {1} \u0441\u0442\u0440.", escapedPageTitle, numToDelete);
+            }
+            if (numRestrictedDescendants > 0) {
+                if (numRestrictedDescendants === 1) {
+                    description += ' ' + AJS.format("{0} \u0434\u043e\u0447\u0435\u0440\u043d\u044f\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0431\u0443\u0434\u0435\u0442 \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0430 \u0432 \u0434\u0435\u0440\u0435\u0432\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446.", numRestrictedDescendants);
+                } else {
+                    description += ' ' + AJS.format("{0} \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0431\u0443\u0434\u0443\u0442 \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u044b \u0432 \u0434\u0435\u0440\u0435\u0432\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446.", numRestrictedDescendants);
+                }
+            }
+            // TODO incoming links
+            $description.html(description);
+        });
+    }
+
+    /**
+     * Bind events to the control buttons for this dialog
+     * @returns {undefined}
+     * @private
+     */
+    function _bindButtons() {
+        var $submitButton = dialog.$element.find(SUBMIT_BUTTON_SELECTOR);
+        var $backButton = dialog.$element.find(BACK_BUTTON_SELECTOR);
+        var $closeButton = dialog.$element.find(CLOSE_BUTTON_SELECTOR);
+
+        $backButton.click(function () {
+            AJS.trigger(state.DELETE_HIERARCHY_BACK_EVENT);
+        });
+
+        $submitButton.click(function () {
+            new DeleteService({
+                loadingIndicator: dialog.loadingIndicator,
+                beforeSubmit: function() {
+                    validationError.removeError(dialog);
+                },
+                dialog: dialog
+            }).submit();
+        });
+
+        $closeButton.click(function (e) {
+            e.preventDefault();
+            AJS.trigger(state.DELETE_HIERARCHY_CANCEL_EVENT);
+        });
+    }
+
+    return dialog;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/dialog/delete-dialog.js' */
+define('confluence/page-hierarchy/dialog/delete-dialog', [
+    'ajs',
+    'confluence/legacy',
+    'confluence/page-hierarchy/fetch/fetch-children-with-incoming-links',
+    'confluence/page-hierarchy/fetch/fetch-content-restrictions',
+    'confluence/page-hierarchy/fetch/fetch-incoming-link-count',
+    'confluence/page-hierarchy/fetch/fetch-space-permissions',
+    'confluence/page-hierarchy/fetch/fetch-subtree-count',
+    'confluence/page-hierarchy/service/data-service',
+    'confluence/page-hierarchy/service/delete-service',
+    'confluence/page-hierarchy/service/dialog-service',
+    'confluence/page-hierarchy/state/delete-state',
+    'confluence/page-hierarchy/util/analytics-event',
+    'confluence/page-hierarchy/util/validation-error'
+], function (AJS,
+             Confluence,
+             fetchChildrenWithIncomingLinks,
+             fetchRestrictions,
+             fetchIncomingLinkCount,
+             fetchSpacePermissions,
+             fetchSubtreeCount,
+             DataService,
+             DeleteService,
+             DialogService,
+             state,
+             analyticsEvent,
+             validationError) {
+    var NAME = 'delete-page-dialog';
+    var DELETE_DIALOG_NEXT_SELECTOR = '#delete-dialog-next';
+    var DELETE_DIALOG_CLOSE_SELECTOR = '#delete-dialog-close';
+    var DELETE_HIERARCHY_CHECKBOX_SELECTOR = '#delete-hierarchy';
+    var VARIABLE_DESCRIPTION_SELECTOR = '#variable-description';
+    var INCOMING_LINKS_SELECTOR = '#incoming-links';
+    var RESTRICTED_PAGE_SELECTOR = '#restricted-page';
+    var CHILDREN_WARNING_SELECTOR = '#children-warning';
+    var TEMPLATE_NAME = 'deleteDialog';
+    var $ = AJS.$;
+
+    var dialog = DialogService.get(NAME, {
+        templateName: TEMPLATE_NAME,
+        templateParameters: {
+            pageTitle: AJS.Meta.get('page-title')
+        },
+        onShow: _show,
+        onInit: _init
+    });
+
+    /**
+     * Do initial setup actions when the dialog is first loaded. Run once.
+     * @returns {undefined}
+     * @private
+     */
+    function _init() {
+        _prefetchData();
+        _bindEvents();
+        _bindButtons();
+    }
+
+
+    /**
+     * Main method that runs when this dialog is launched.
+     * @returns {undefined}
+     * @private
+     */
+    function _show() {
+        _bindValues();
+        _determineDescription();
+    }
+
+    /**
+     * Setup the data prefetchers, so that we can start loading information for the user even
+     * before they need it.
+     * @returns {undefined}
+     * @private
+     */
+    function _prefetchData() {
+        var pageId = AJS.Meta.get('page-id');
+        var spaceKey = AJS.Meta.get('space-key');
+        DataService.get(DataService.SUBTREE_COUNT_TOTAL_ONLY_DATA_KEY, fetchSubtreeCount(pageId, true));
+        DataService.get(DataService.INCOMING_LINKS_DATA_KEY, fetchIncomingLinkCount(pageId));
+        DataService.get(DataService.SPACE_PERMISSIONS_DATA_KEY, fetchSpacePermissions(spaceKey));
+        DataService.get(DataService.ROOT_INCOMING_LINKS_COUNT_DATA_KEY, fetchChildrenWithIncomingLinks(pageId, pageId));
+        DataService.get(DataService.RESTRICTIONS_DATA_KEY, fetchRestrictions(pageId).fail(function(errorResponse){
+            validationError.fail(errorResponse, analyticsEvent.DELETE_HIERARCHY_ERROR_EVENT, dialog, state.ERROR_MESSAGES);
+        }));
+        DataService.get(DataService.SUBTREE_COUNT_DATA_KEY, fetchSubtreeCount(pageId).done(function(subtreeCount) {
+            state.setTargetIds(subtreeCount.targetIds);
+        }));
+    }
+
+    /**
+     * Determines the description of the dialog, including any warnings and errors that are present
+     * @returns {undefined}
+     * @private
+     */
+    function _determineDescription() {
+        var $variableDescription = dialog.$element.find(VARIABLE_DESCRIPTION_SELECTOR);
+
+        dialog.async(
+            DataService.get(DataService.SUBTREE_COUNT_TOTAL_ONLY_DATA_KEY),
+            DataService.get(DataService.INCOMING_LINKS_DATA_KEY))
+            .done(
+                function (subtreeCount, numIncomingLinks) {
+                    // Subtree count includes the parent page
+                    var numDescendants = subtreeCount.totalCount - 1;
+
+                    // No problems :)
+                    if (!numIncomingLinks && !numDescendants) {
+                        $variableDescription.html(' ' + "\u0417\u0434\u0435\u0441\u044c \u043d\u0435\u0442 \u0432\u0445\u043e\u0434\u044f\u0449\u0438\u0445 \u0441\u0441\u044b\u043b\u043e\u043a \u0438\u043b\u0438 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u0441\u0442\u0440\u0430\u043d\u0438\u0446, \u0442\u0430\u043a \u0447\u0442\u043e \u0432\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u0432 \u043a\u043e\u0440\u0437\u0438\u043d\u0443.");
+                    }
+                    _updateChildrenDescription();
+                    _updateIncomingLinksWarning(numIncomingLinks);
+                    _updateRestrictionsWarning();
+                });
+    }
+
+    /**
+     * Update the warning for if this page is restricted or not and if the children will become visible
+     * if it is deleted.
+     * @returns {undefined}
+     * @private
+     */
+    function _updateRestrictionsWarning() {
+        if (state.getOptions().deleteHierarchy) {
+            dialog.async(
+                _pageRestricted(),
+                DataService.get(DataService.SUBTREE_COUNT_DATA_KEY)
+            ).done(function (pageRestricted, subtreeCount) {
+                var numDescendants = subtreeCount.totalCount - 1;
+                var numRestrictedDescendants = subtreeCount.restrictedCount;
+                if (!pageRestricted || numDescendants <= 0) {
+                    return;
+                }
+                _createRestrictionsWarning(numRestrictedDescendants);
+            });
+        } else {
+            dialog.async(
+                _pageRestricted(),
+                DataService.get(DataService.SUBTREE_COUNT_TOTAL_ONLY_DATA_KEY)
+            ).done(function (pageRestricted, subtreeCount) {
+                var numDescendants = subtreeCount.totalCount - 1;
+                if (!pageRestricted || numDescendants <= 0) {
+                    return;
+                }
+                _createRestrictionsWarning(numDescendants);
+            });
+        }
+    }
+
+    /**
+     * Creates the restrictions warning.
+     * @param {number} numChildrenLeftBehind The number of children that will be left behind
+     * @returns {undefined}
+     * @private
+     */
+    function _createRestrictionsWarning(numChildrenLeftBehind) {
+        var $restrictedPage = dialog.$element.find(RESTRICTED_PAGE_SELECTOR);
+        $restrictedPage.html(Confluence.Templates.PageHierarchy.restrictedPage({
+            numChildrenLeftBehind: numChildrenLeftBehind
+        }));
+    }
+
+    /**
+     * Displays a warning if there are incoming links
+     * @param {number} numIncomingLinks The number of incoming links to the parent page
+     * @returns {undefined}
+     * @private
+     */
+    function _updateIncomingLinksWarning(numIncomingLinks) {
+        if (!numIncomingLinks) {
+            return;
+        }
+        var $incomingLinks = dialog.$element.find(INCOMING_LINKS_SELECTOR);
+        $incomingLinks.html(Confluence.Templates.PageHierarchy.incomingLinks({
+            numIncomingLinks: numIncomingLinks,
+            linkUrl: AJS.contextPath() + '/pages/viewinfo.action?pageId=' + state.getOptions().targetPageId
+        }));
+    }
+
+    /**
+     * Updates the description of how many children will be deleted or left behind based on the user's
+     * selection to also delete children or not
+     * @returns {undefined}
+     * @private
+     */
+
+    function _updateChildrenDescription() {
+        var $variableDescription = dialog.$element.find(VARIABLE_DESCRIPTION_SELECTOR);
+        var numDescendants;
+        var numRestrictedDescendants;
+        if (state.getOptions().deleteHierarchy) {
+            DataService.get(DataService.SUBTREE_COUNT_DATA_KEY).done(function (subtreeCount) {
+                // total subtree count includes the parent page;
+                numDescendants = subtreeCount.totalCount - 1;
+                numRestrictedDescendants = subtreeCount.restrictedCount;
+
+                if (numDescendants) {
+                    var numDeleted = numDescendants - numRestrictedDescendants;
+                    if (numDeleted === 1) {
+                        $variableDescription.html(' ' + AJS.format("\u0422\u0430\u043a\u0436\u0435 \u0431\u0443\u0434\u0435\u0442 \u0443\u0434\u0430\u043b\u0435\u043d\u0430 {0} \u0434\u043e\u0447\u0435\u0440\u043d\u044f\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430.", numDeleted));
+                    } else {
+                        $variableDescription.html(' ' + AJS.format("\u0422\u0430\u043a\u0436\u0435 \u0431\u0443\u0434\u0435\u0442 \u0443\u0434\u0430\u043b\u0435\u043d\u043e {0} \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u0441\u0442\u0440.", numDeleted));
+                    }
+                    if (numRestrictedDescendants > 0) {
+                        if (numRestrictedDescendants === 1) {
+                            $variableDescription.append(' ' + AJS.format("{0} \u0434\u043e\u0447\u0435\u0440\u043d\u044f\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0431\u0443\u0434\u0435\u0442 \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0430 \u0432 \u0434\u0435\u0440\u0435\u0432\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446.", numRestrictedDescendants));
+                        } else {
+                            $variableDescription.append(' ' + AJS.format("{0} \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0431\u0443\u0434\u0443\u0442 \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u044b \u0432 \u0434\u0435\u0440\u0435\u0432\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446.", numRestrictedDescendants));
+                        }
+                    }
+                }
+            });
+        } else {
+            DataService.get(DataService.SUBTREE_COUNT_TOTAL_ONLY_DATA_KEY).done(function (subtreeCount) {
+                // total subtree count includes the parent page;
+                numDescendants = subtreeCount.totalCount - 1;
+                if (numDescendants === 1) {
+                    $variableDescription.html(' ' + AJS.format("{0} \u0434\u043e\u0447\u0435\u0440\u043d\u044f\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0431\u0443\u0434\u0435\u0442 \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0430 \u0432 \u0434\u0435\u0440\u0435\u0432\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446.", numDescendants));
+                } else if (numDescendants > 0) {
+                    $variableDescription.html(' ' + AJS.format("{0} \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b \u0431\u0443\u0434\u0443\u0442 \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u044b \u0432 \u0434\u0435\u0440\u0435\u0432\u0435 \u0441\u0442\u0440\u0430\u043d\u0438\u0446.", numDescendants));
+                }
+            });
+        }
+    }
+
+    /**
+     * Checks to see if the target page is restricted. It is restricted only if it has view restrictions.
+     * Editing restrictions are ignored.
+     * @returns {jQuery.Deferred} Promise object with value either true or false
+     * @private
+     */
+    function _pageRestricted() {
+        return DataService.get(DataService.RESTRICTIONS_DATA_KEY).pipe(function (data) {
+            // Only consider read restrictions since this is what makes pages visible or not.
+            var isRestricted = data.read.restrictions.user.size
+                || data.read.restrictions.group.size;
+            return $.Deferred().resolve(isRestricted);
+        });
+    }
+
+    /**
+     * Determines if the user has legitimate permissions to delete the hierarchy.
+     * If a user only has delete own permission, then they are not allowed to delete hierarchies,
+     * only their created pages one at a time.
+     * @returns {jQuery.Deferred} promise with result either true or false
+     * @private
+     */
+    function _isPermittedToDeleteHierarchy() {
+        var deferred = $.Deferred();
+
+        DataService.get(DataService.SPACE_PERMISSIONS_DATA_KEY).done(function (permissions) {
+            var hasPermission =
+                permissions.systemAdmin
+                || permissions.spaceAdmin
+                || permissions.deletePages;
+            deferred.resolve(hasPermission);
+        });
+
+        return deferred.promise();
+    }
+
+    /**
+     * Bind events to the control buttons for the dialog
+     * @returns {undefined}
+     * @private
+     */
+    function _bindButtons() {
+        var $deleteDialogNext = dialog.$element.find(DELETE_DIALOG_NEXT_SELECTOR);
+        var $deleteDialogClose = dialog.$element.find(DELETE_DIALOG_CLOSE_SELECTOR);
+
+        // Next button binding
+        $deleteDialogNext.click(function () {
+            if (state.getOptions().deleteHierarchy) {
+                AJS.trigger(state.DELETE_HIERARCHY_EVENT);
+            } else {
+                new DeleteService({
+                    loadingIndicator: dialog.loadingIndicator,
+                    beforeSubmit: function() {
+                        validationError.removeError(dialog);
+                    },
+                    dialog: dialog
+                }).submit();
+            }
+        });
+
+        // Close button binding
+        $deleteDialogClose.click(function (e) {
+            e.preventDefault();
+            AJS.trigger(state.DELETE_HIERARCHY_CANCEL_EVENT);
+        });
+    }
+
+    /**
+     * Binds any existing values to fields
+     * @returns {undefined}
+     * @private
+     */
+    function _bindValues() {
+        _bindFields(true);
+    }
+
+    /**
+     * Binds any events to sync field data. Should be called once.
+     * @returns {undefined}
+     * @private
+     */
+    function _bindEvents() {
+        _bindFields(false);
+    }
+
+    /**
+     * Either writes values or binds events to fields
+     * @param {boolean} writeValues If true, this method writes values for the fields,
+     *                              otherwise it binds its events.
+     * @returns {undefined}
+     * @private
+     */
+    function _bindFields(writeValues) {
+        var $deleteHierarchy = $(DELETE_HIERARCHY_CHECKBOX_SELECTOR);
+
+        if (writeValues) {
+            // trigger change event to update state accordingly
+            $deleteHierarchy.change();
+
+            _checkLimit().done(_checkPermissions);
+        } else {
+            $deleteHierarchy.change(function () {
+                state.setDeleteHierarchy($deleteHierarchy.prop('checked'));
+                _setNextButtonText();
+                _updateChildrenDescription();
+                _showOrHideRestrictionWarning();
+                _showOrHideIncomingLinksWarning();
+            });
+        }
+    }
+
+    /**
+     * Check permissions of the entire hierarchy so the user can see how many pages will be
+     * deleted or not
+     * @param {boolean} underLimit  Whether we are under the maximum limit
+     * @return {undefined}
+     * @private
+     */
+    function _checkPermissions(underLimit) {
+        if (!underLimit) {
+            return;
+        }
+        var $childrenWarning = $(CHILDREN_WARNING_SELECTOR);
+        $childrenWarning.html(_createWarningIcon("\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043f\u0440\u0430\u0432"));
+        dialog.async(
+            "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043f\u0440\u0430\u0432 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u0441\u0442\u0440\u0430\u043d\u0438\u0446...",
+            _isPermittedToDeleteHierarchy(),
+            DataService.get(DataService.SUBTREE_COUNT_DATA_KEY))
+            .done(
+                function (isPermitted, subtreeCount) {
+                    // Total subtree count includes parent page
+                    var numDescendants = subtreeCount.totalCount - 1;
+                    var numRestrictedDescendants = subtreeCount.restrictedCount;
+                    var canDeleteHierarchy = numDescendants > numRestrictedDescendants && isPermitted;
+                    _enableOrDisableDeleteHierarchy(canDeleteHierarchy, numDescendants,
+                        "\u0423 \u0432\u0430\u0441 \u043d\u0435\u0442 \u043f\u0440\u0430\u0432 \u043d\u0430 \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u044d\u0442\u0438\u0445 \u0441\u0442\u0440\u0430\u043d\u0438\u0446.");
+                    _setNextButtonText();
+                }).fail(function(errorResponse) {
+                    validationError.fail(errorResponse, analyticsEvent.DELETE_HIERARCHY_ERROR_EVENT, dialog, state.ERROR_MESSAGES);
+                });
+    }
+
+    /**
+     * Check the page limit to see if the user is trying to delete more pages than the maximum.
+     * It also disables the delete children checkbox if we are over the limit
+     * @returns {jQuery.Deferred} with true if it's okay, or false if we are over the limit
+     * @private
+     */
+    function _checkLimit() {
+        var deferred = AJS.$.Deferred();
+
+        dialog.async(DataService.get(DataService.SUBTREE_COUNT_TOTAL_ONLY_DATA_KEY)).done(function (subtreeCount) {
+            if (subtreeCount.totalCount > subtreeCount.maximum) {
+                _enableOrDisableDeleteHierarchy(false, subtreeCount.totalCount,
+                    AJS.format("\u041c\u044b \u043c\u043e\u0436\u0435\u043c \u0443\u0434\u0430\u043b\u044f\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e {0} \u0441\u0442\u0440. \u0437\u0430 \u0440\u0430\u0437.", subtreeCount.maximum));
+
+                // Cannot delete more pages than the limit
+                deferred.resolve(false);
+            } else {
+                deferred.resolve(true);
+            }
+        });
+
+        return deferred.promise();
+    }
+
+    /**
+     * Enable or disable the checkbox and text and provide the appropriate message to the user
+     * @param {boolean} canDelete True if the user can delete and the checkbox should be enabled,
+     *                              false otherwise
+     * @param {number} numDescendants The number of descendant pages
+     * @param {string} message  The message to display with the warning icon
+     * @returns {undefined}
+     * @private
+     */
+    function _enableOrDisableDeleteHierarchy(canDelete, numDescendants, message) {
+        var $deleteHierarchy = $(DELETE_HIERARCHY_CHECKBOX_SELECTOR);
+        var $childrenWarning = $(CHILDREN_WARNING_SELECTOR);
+        var deleteHierarchy = state.getOptions().deleteHierarchy && canDelete;
+        var $fieldGroup = $deleteHierarchy.closest('.custom-field-group:first');
+
+        state.setDeleteHierarchy(deleteHierarchy);
+
+        $deleteHierarchy.prop('checked', state.getOptions().deleteHierarchy);
+        $deleteHierarchy.prop('disabled', !canDelete);
+
+        if (!canDelete) {
+            $fieldGroup.addClass('disabled');
+            if (numDescendants === 0) {
+                $fieldGroup.hide();
+                $childrenWarning.hide();
+            } else {
+                $childrenWarning.html(_createWarningIcon(message));
+            }
+        } else {
+            $fieldGroup.removeClass('disabled');
+            $childrenWarning.empty();
+        }
+    }
+
+    /**
+     * Creates a warning icon for deleting children
+     * @param {string} message Message for the tooltip
+     * @returns {jQuery} the jQuery warning icon
+     * @private
+     */
+    function _createWarningIcon(message) {
+        var $childrenWarning = $('<span class="aui-icon aui-icon-small aui-iconfont-warning warning standalone">Warning</span>');
+        $childrenWarning.tooltip({
+            title: function () {
+                return message;
+            }
+        });
+        return $childrenWarning;
+    }
+
+    /**
+     * Shows or hides the restriction warning based on whether or not the user has selected to delete child pages also
+     * @returns {undefined}
+     * @private
+     */
+    function _showOrHideRestrictionWarning() {
+        DataService.get(DataService.SUBTREE_COUNT_DATA_KEY).done(function (subtreeCount) {
+            var thereAreChildrenButWeDontDeleteThem =
+                (subtreeCount.totalCount - 1 > 0 && !state.getOptions().deleteHierarchy);
+            var weDeleteChildrenButSomeCannotBeDeleted =
+                (subtreeCount.restrictedCount > 0 && state.getOptions().deleteHierarchy);
+            var show = thereAreChildrenButWeDontDeleteThem
+                || weDeleteChildrenButSomeCannotBeDeleted;
+            var $restrictedPage = dialog.$element.find(RESTRICTED_PAGE_SELECTOR);
+            $restrictedPage.toggle(show);
+        });
+    }
+
+    /**
+     * Shows or hides the incoming links warning based on whether or not the user has selected to delete child pages also
+     * @returns {undefined}
+     * @private
+     */
+    function _showOrHideIncomingLinksWarning() {
+        var show = !state.getOptions().deleteHierarchy;
+        var $incomingLinks = dialog.$element.find(INCOMING_LINKS_SELECTOR);
+        $incomingLinks.toggle(show);
+    }
+
+    /**
+     * Set the text of the next button
+     * @returns {undefined}
+     * @private
+     */
+    function _setNextButtonText() {
+        var $deleteDialogNext = dialog.$element.find(DELETE_DIALOG_NEXT_SELECTOR);
+        if (state.getOptions().deleteHierarchy) {
+            $deleteDialogNext.html("\u0414\u0430\u043b\u0435\u0435");
+        } else {
+            $deleteDialogNext.html("\u0423\u0434\u0430\u043b\u0438\u0442\u044c");
+        }
+    }
+
+    return dialog;
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/flow/delete-flow.js' */
+define('confluence/page-hierarchy/flow/delete-flow', [
+    'ajs',
+    'confluence/page-hierarchy/state/delete-state',
+    'confluence/page-hierarchy/dialog/delete-dialog',
+    'confluence/page-hierarchy/dialog/delete-hierarchy-dialog',
+    'confluence/page-hierarchy/dialog/delete-progress-dialog',
+    'confluence/page-hierarchy/dialog/delete-error-dialog',
+    'confluence/page-hierarchy/service/data-service',
+    'confluence/page-hierarchy/util/analytics-event'
+], function (AJS,
+             state,
+             deleteDialog,
+             deleteHierarchyDialog,
+             progressDialog,
+             errorDialog,
+             DataService,
+             analyticsEvent) {
+
+    // Delete Dialog
+    AJS.bind(state.DELETE_HIERARCHY_EVENT, function () {
+        deleteDialog.hide();
+        deleteHierarchyDialog.show();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_ANALYTICS_EVENT);
+    });
+
+    // Delete Hierarchy Dialog
+    AJS.bind(state.DELETE_HIERARCHY_SUBMIT_EVENT, function () {
+        deleteDialog.hide();
+        deleteHierarchyDialog.hide();
+        progressDialog.show();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_SUBMIT_ANALYTICS_EVENT);
+    });
+
+    AJS.bind(state.DELETE_HIERARCHY_BACK_EVENT, function () {
+        deleteHierarchyDialog.hide();
+        deleteDialog.show();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_BACK_ANALYTICS_EVENT);
+    });
+
+    AJS.bind(state.DELETE_HIERARCHY_DONE_EVENT, function () {
+        progressDialog.hide();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_DONE_ANALYTICS_EVENT);
+    });
+
+    AJS.bind(state.DELETE_HIERARCHY_VIEW_ERROR_EVENT, function () {
+        errorDialog.show();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_VIEW_ERROR_ANALYTICS_EVENT)
+    });
+
+    // Finished
+    AJS.bind(state.FINISHED_EVENT, function () {
+        deleteDialog.remove();
+        deleteHierarchyDialog.remove();
+        progressDialog.remove();
+        errorDialog.remove();
+
+        window.location.hash = '';
+        state.reset();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_FINISHED_ANALYTICS_EVENT);
+    });
+
+    AJS.bind(state.DELETE_HIERARCHY_CANCEL_EVENT, function () {
+        deleteDialog.remove();
+        deleteHierarchyDialog.remove();
+        state.reset();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_CANCEL_ANALYTICS_EVENT);
+    });
+
+    /**
+     * Starts an existing flow if one is in progress.
+     * @returns {boolean} true if the flow is in progress, false otherwise.
+     * @private
+     */
+    function _startExistingFlow() {
+        var hash = window.location.hash;
+        if (hash.indexOf('delete-complete') === 1) {
+            var split = hash.split('&');
+            var taskId = split[1];
+            var originalPageTitle = decodeURIComponent(split[2]);
+            state.setOriginalPageTitle(originalPageTitle);
+            var doFlow = function () {
+                state.setTaskId(taskId);
+                state.setExistingFlow(true);
+                progressDialog.show();
+                analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_START_EXISTING_ANALYTICS_EVENT);
+            };
+            if (taskId) {
+                doFlow();
+            } else {
+                // if there is no taskId specified, we might be in a test, so just
+                // wait for the test to trigger the flow
+                AJS.bind('copy-page-hierarchy:delete-hierarchy-existing-flow-parent-page', doFlow);
+            }
+
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Starts a brand new flow.
+     * @returns {undefined}
+     * @private
+     */
+    function _startNewFlow() {
+        DataService.reset();
+        deleteDialog.show();
+        analyticsEvent.publish(analyticsEvent.DELETE_HIERARCHY_START_ANALYTICS_EVENT);
+    }
+
+    function startFlow() {
+        _startExistingFlow() || _startNewFlow();
+    }
+
+    return {
+        startFlow: startFlow
+    }
+});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'com.atlassian.confluence.plugins.confluence-page-hierarchy-plugin:delete-resources', location = '/js/delete-main.js' */
+require([
+    'ajs',
+    'confluence/page-hierarchy/flow/delete-flow'
+], function (AJS,
+             Flow) {
+    AJS.toInit(function ($) {
+        // Intercept the regular click action and present the user with a dialog
+        var $toolsDeleteLink = $("#action-remove-content-link");
+        $toolsDeleteLink.off('click');
+        $toolsDeleteLink.on('click', function (e) {
+            e.preventDefault();
+            Flow.startFlow();
+        });
+        Flow.startFlow();
+    });
+});
+
+
+}catch(e){WRMCB(e)};
